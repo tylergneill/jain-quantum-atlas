@@ -38,18 +38,35 @@ on 429/5xx, resumable cache. Nothing here logs in to jainelibrary.org.
       extra are the Āgama shelf, audio and JAINA material; the API's 8,539
       extra are almost entirely 2023–2026 accessions. Quantum is a snapshot
       ending in 2022.
-- [ ] **Decide the universe in light of that.** `build_tree` provisionally
-      takes option (b), widened to the UNION of both catalogues on `srno`
-      (41,587 works; `text_count` 26,792 = items with a Quantum text; the
-      2,005 Quantum-only rows carry no date). Confirm or narrow. Either way
-      `web_date` is the changelog axis and the API pull must be repeated
-      periodically — the only recurring fetch this Atlas would have, and it
-      still needs a rivulet fetcher (see Phase 1).
-- [ ] **tree.json is 20.5 MB** (41.6k works with full metadata). The sibling
-      rule is "ship nothing derivable": drop `sources` where it is both,
-      `classification` strings, and `title_native` when it only transliterates
-      the title; consider leaving the API-only items out of the published
-      tree and counting them in `all_stats` alone.
+- [x] **Decide the universe.** Decided 2026-10-07: **the Sanskrit tier only**
+      — `language` exactly `Sanskrit`, types Books (the "manuscripts" folder
+      merged in as `horizontal`) / Āgama shelf — is what the tree publishes and what the
+      aggregator reads (2,465 works, 1,961 with text, all measured). The rest
+      of the library is summarised in `all_stats.library_*` and dropped. That
+      also took `tree.json` from 20.5 MB to 1.7 MB. `web_date` stays the
+      changelog axis; the API pull still needs a rivulet fetcher (Phase 1).
+- [ ] **Tier control.** Add Prakrit as the second tier (`language` ⊆
+      {Sanskrit, Prakrit}: 3,038 items of the three types) and "any Sanskrit"
+      as the third (7,588), as a reader-side toggle whose default is tier 1,
+      so the published counts stay the Sanskrit tier. Ship tiers 2–3 in a
+      second file loaded on demand, or in the tree flagged and filtered.
+- [x] **Axes** (2026-10-07): authors by default (`sutra_author` first, the
+      catalogue's author as `editor`; 96% of the tier covered), the Āgama
+      canon second (class → text from the library's `agam_*` slugs, in the
+      traditional order; 455 works, the rest under "Other works", rendered as
+      a leaf). No type axis. Indic-script titles are the titles, with the
+      romanisation kept as `title_en` for the booktext slug.
+- [ ] **Author-name fold**, mechanical only: the catalogue spells one person
+      several ways ("Dipratnasagar, Deepratnasagar"; "Hemchandracharya" vs
+      "Hemchandrasuri"). Fold obvious variants with a table, as the sibling
+      does for categories; do not merge on guesswork.
+- [ ] **Browsing structure without interpretation** (agreed 2026-10-07): the
+      remaining piece is the classification tokens
+      as an AND-filter panel in the Sanskrit Documents style — the library's
+      tags as published, with only mechanical cleanup (trailing commas,
+      comma-joined pairs) and a short documented exclusion list for the
+      format tokens (`Book_Devnagari`…) and internal codes (`A000`…). No
+      subject fold.
 - [ ] **Language grouping must be era-proof.** The `language` string's
       convention shifted around 2023 (plain `Sanskrit` → `Sanskrit, Hindi`).
       Publish any-Sanskrit as the headline Sanskrit figure; keep

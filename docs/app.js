@@ -24,7 +24,9 @@ const state = {
   searchIndex: new Map(),   // scheme -> Map(id -> lowercased transliterated title), same laziness
   searchAuthorIndex: new Map(), // scheme -> Map(work id -> folded author name), so search finds a work by who wrote it
 
-  axis: localStorage.getItem("axis") || "category",  // category | author
+  // Authors land first: 96% of the Sanskrit tier has one, while the canon
+  // axis speaks for the fifth of it that carries an agam_* tag.
+  axis: localStorage.getItem("axis") || "author",  // category (= canon) | author
   // Optional secondary grouping within a selected node. OFF by default on both
   // axes: the point of the two-axis design is that the primary axis alone reads
   // as a flat list, with the cross-cutting one available on demand.
@@ -233,6 +235,19 @@ function findNode(id) {
 // only), which is dead weight if you came here to read. The filter applies to
 // the work lists, not to the sidebar counts -- those describe the catalogue,
 // and silently restating them under a filter would make the two disagree.
+// A domain whose only sub-domain is the absence bucket has no real second
+// level -- "Other works > uncategorized" says the same thing twice -- so it is
+// rendered as a leaf holding that bucket's works directly. The data keeps the
+// bucket (the shape is uniform); only the rendering collapses it.
+function loneUncategorized(entry) {
+  const kids = entry.children || [];
+  return kids.length === 1 && kids[0].uncategorized ? kids[0] : null;
+}
+
+function effectiveChildren(entry) {
+  return loneUncategorized(entry) ? [] : (entry.children || []);
+}
+
 function textOnlyFiltered(works) {
   return state.textOnly ? works.filter((w) => w.text) : works;
 }
@@ -386,7 +401,7 @@ function renderSidebarNode(entry, parent, depth) {
   // there as "(0 works)" -- under TXT only the sidebar is a map of what you can
   // actually reach, and 3888 of the author axis's entries have no text at all.
   if (state.textOnly && !(entry.stats?.text_count)) return null;
-  const kids = entry.children || [];
+  const kids = effectiveChildren(entry);
   const isExpanded = state.expanded.has(id);
 
   const toggleNode = (expandAll) => {
@@ -416,9 +431,14 @@ function renderSidebarNode(entry, parent, depth) {
           toggleNode(isExpandAllGesture(ev));
         },
       }, isExpanded ? "▾" : "▸")
+    // On the category axis a childless top-level node sits among arrowed
+    // siblings, so it takes the dot like any sub-level leaf and stays aligned
+    // with them. The blank spacer is only for the author axis, where every
+    // row is childless and a column of dots would mark nothing.
     : el("span", {
-        class: "toggleArrow toggleArrowStatic" + (depth ? "" : " toggleArrowLeaf"),
-      }, depth ? "·" : "");
+        class: "toggleArrow toggleArrowStatic"
+          + (depth || state.axis === "category" ? "" : " toggleArrowLeaf"),
+      }, depth || state.axis === "category" ? "·" : "");
   if (kids.length) bindLongPressExpand(toggleArrow, () => toggleNode(true));
 
   const statsText = formatStats(visibleStats(entry.stats));
@@ -541,6 +561,18 @@ function renderWorkLi(work) {
       title: "jainelibrary.org lists an OCR Word document for this item (behind its login)",
     }, "docx"));
   }
+  if (work.horizontal) {
+    badges.appendChild(el("span", {
+      class: "badge",
+      title: "Filed by the library under \"manuscripts\": a block print or horizontal-format printed book",
+    }, "horizontal"));
+  }
+  if (work.editor) {
+    badges.appendChild(el("span", {
+      class: "badge",
+      title: `Editor / publisher as catalogued: ${work.editor}`,
+    }, "ed."));
+  }
   if (FULLTEXT_MODE && work.has_text) {
     badges.appendChild(el("a", {
       href: `/text/${work.id}`, target: "_blank", rel: "noopener",
@@ -570,7 +602,8 @@ function viewerUrl(work) {
 }
 
 function textUrl(work) {
-  return work.text ? `${SITE_ROOT}/booktext/${slugOf(work.title)}/${work.id}` : null;
+  // The slug is the library's romanised title, not the Indic one shown.
+  return work.text ? `${SITE_ROOT}/booktext/${slugOf(work.title_en || work.title)}/${work.id}` : null;
 }
 
 function metadataUrl(work) {
@@ -591,10 +624,24 @@ function nodeSourceLinks(entry, parent) {
   return href ? [{ label: "search", href, kind: "search" }] : [];
 }
 
+// Quantum has no per-category browse page beyond its search, so a grouping
+// heading gets the search link only.
+function categoryBrowseUrl(domain) {
+  return null;
+}
+
+const SOURCE_LINK_TITLES = {
+  search: {
+    category: "Search jainqq.org for this term",
+    author: "Search jainqq.org for this author",
+  },
+  browse: { category: "" },
+};
+
 function sourceLinkTitle(kind) {
   return state.axis === "author"
-    ? "Search jainqq.org for this author"
-    : "Search jainqq.org for this term";
+    ? SOURCE_LINK_TITLES.search.author
+    : SOURCE_LINK_TITLES.search.category;
 }
 
 // A list of works, capped, with an optional secondary grouping applied.
@@ -645,12 +692,12 @@ function groupHeadingLinks(label, grouping) {
 
   if (grouping === "author") {
     const href = siteSearchUrl(label, "author");
-    return href ? [{ label: "search txt+pdf", href, kind: "search" }] : [];
+    return href ? [{ label: "search", href, kind: "search" }] : [];
   }
 
   const links = [];
   const search = siteSearchUrl(label, "cat");
-  if (search) links.push({ label: "search txt+pdf", href: search, kind: "search" });
+  if (search) links.push({ label: "search", href: search, kind: "search" });
   const browse = categoryBrowseUrl(label);
   if (browse) links.push({ label: "browse txt", href: browse, kind: "browse" });
   return links;
@@ -812,13 +859,15 @@ function renderNodeBlock(entry, parent, { isSearch = false, depth = 0 } = {}) {
       + entry.domains.map((d) => translitTextUncached(d)).join(", ")));
   }
 
-  const kids = (entry.children || [])
+  const kids = effectiveChildren(entry)
     .filter((c) => !state.textOnly || c.stats?.text_count);
   if (kids.length && !isSearch) {
     for (const c of kids) block.appendChild(renderNodeBlock(c, entry, { depth: depth + 1 }));
   }
 
-  const own = entry.work_ids ? worksOf(entry) : [];
+  // A collapsed lone bucket lends its works to the parent it collapsed into.
+  const ownEntry = entry.work_ids ? entry : loneUncategorized(entry);
+  const own = ownEntry ? worksOf(ownEntry) : [];
   if (own.length) {
     block.appendChild(renderWorkList(own, id));
   } else if (state.textOnly && (entry.work_ids || []).length) {
@@ -902,7 +951,7 @@ function renderOverview() {
 
   for (const entry of shown) {
     const id = nodeIdFor(entry);
-    const subCount = (entry.children || []).length;
+    const subCount = effectiveChildren(entry).length;
     block.appendChild(el("div", {
       class: "block panelTitle" + (entry.unknown ? " absentValue" : ""),
       style: "cursor:pointer;",

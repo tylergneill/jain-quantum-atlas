@@ -69,6 +69,30 @@ notes and answer from them.** `notes/scratch/todo.md` is the spine — every ope
   and it is dated by its fetch.
 - **Don't promote note prose into README or UI copy** without re-checking it.
 
+## The contract is the Sanskrit tier, nothing else
+
+What `build_tree` publishes -- and so what Sāgarasaṅgama reads -- is the
+items whose catalogued `language` string is exactly `Sanskrit` and that are
+books. "Books" absorbs two of the library's storage folders: "manuscripts",
+which holds block prints and horizontal-format printed books (each flagged
+`horizontal`), and Quantum's `agam` folder of sutra-level editions. Type is
+a filter on what enters the tree and nothing more -- not an axis, not a
+badge. Decided
+2026-10-07: this is an Atlas about Sanskrit first, Prakrit second, and the
+Gujarati, Hindi and English majority of the library is not what the
+aggregator counts. The whole library is still built in memory and summarised
+into `all_stats.library_count` / `library_text_count` /
+`sanskrit_prakrit_count` / `any_sanskrit_count` for the About page, then
+dropped from the tree. The Prakrit tier and a reader-side tier control are
+the next step, not the published default.
+
+Two consequences worth knowing: the Sanskrit tier with text is exactly the
+slice that has been fetched and measured, so `sized == text_count` and the
+byte figures are complete rather than a floor; and the post-2022 convention
+shift (`Sanskrit, Hindi`) means recent accessions mostly fall outside the
+tier -- which coincides with Quantum's text stopping in 2022, so little that
+had text is lost.
+
 ## Two sources, one catalogue
 
 jainelibrary.org and jainqq.org ("Jain Quantum") are the same organisation's

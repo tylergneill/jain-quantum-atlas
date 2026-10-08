@@ -38,13 +38,17 @@ def summarize(works: list[dict]) -> dict:
     return stats
 
 
-def build_category_axis(works: list[dict], by_id: dict[str, dict]) -> list[dict]:
+def build_category_axis(works: list[dict], by_id: dict[str, dict],
+                        domain_order=None, sub_order=None) -> list[dict]:
+    """`domain_order` / `sub_order`: optional sort keys, so a canon can be
+    listed in its traditional order rather than alphabetically. Default is
+    alphabetical with the absence bucket last."""
     domains: dict[str, dict[str, list[str]]] = defaultdict(lambda: defaultdict(list))
     for work in works:
         sub = work.get("sub_domain") or UNCATEGORIZED_SUB
         domains[work["domain"]][sub].append(work["id"])
     out = []
-    for domain in sorted(domains):
+    for domain in sorted(domains, key=domain_order or (lambda d: d)):
         subs = [
             {
                 "title": sub,
@@ -52,7 +56,9 @@ def build_category_axis(works: list[dict], by_id: dict[str, dict]) -> list[dict]
                 "stats": summarize([by_id[i] for i in domains[domain][sub]]),
                 **({"uncategorized": True} if sub == UNCATEGORIZED_SUB else {}),
             }
-            for sub in sorted(domains[domain], key=lambda s: (s == UNCATEGORIZED_SUB, s))
+            for sub in sorted(domains[domain],
+                              key=lambda s: (s == UNCATEGORIZED_SUB,
+                                             sub_order(domain, s) if sub_order else s))
         ]
         ids = [i for s in subs for i in s["work_ids"]]
         out.append({"title": domain, "children": subs,
@@ -79,7 +85,8 @@ def build_author_axis(works: list[dict], by_id: dict[str, dict]) -> list[dict]:
     return out
 
 
-def build_axes(works: list[dict], source: str, extra_stats: dict | None = None) -> dict:
+def build_axes(works: list[dict], source: str, extra_stats: dict | None = None,
+               domain_order=None, sub_order=None) -> dict:
     works.sort(key=lambda w: w["serial"])
     by_id = {w["id"]: w for w in works}
     stats = summarize(works)
@@ -89,7 +96,7 @@ def build_axes(works: list[dict], source: str, extra_stats: dict | None = None) 
         "source": source,
         "works": works,
         "axes": {
-            "category": build_category_axis(works, by_id),
+            "category": build_category_axis(works, by_id, domain_order, sub_order),
             "author": build_author_axis(works, by_id),
         },
         "all_stats": stats,

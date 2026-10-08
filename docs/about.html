@@ -43,27 +43,43 @@
 
     <h2>At a glance</h2>
     <table>
-      <tr><td>Items catalogued (either site)</td><td><span data-stat="count"></span></td></tr>
-      <tr><td>…by the jainelibrary.org API</td><td><span data-stat="api_count"></span></td></tr>
-      <tr><td>…by Jain Quantum's catalog</td><td><span data-stat="quantum_count"></span></td></tr>
-      <tr><td>Items with a public OCR text on Quantum</td><td><span data-stat="text_count"></span></td></tr>
-      <tr><td>Items with a scanned PDF (login-gated)</td><td><span data-stat="pdf_count"></span></td></tr>
-      <tr><td>Items whose text has been fetched and measured</td><td><span data-stat="sized"></span></td></tr>
-      <tr><td>IAST bytes over those measured items (a floor)</td><td><span data-stat="transliterated_bytes" data-unit="mb"></span> MB</td></tr>
-      <tr><td>Newest accession</td><td><span data-stat="last_changed"></span></td></tr>
+      <tr><td><strong>Sanskrit books</strong> (incl. Quantum's Āgama folder and the "manuscripts" folder)</td><td><span data-stat="count"></span></td></tr>
+      <tr><td>…with a public OCR text on Quantum</td><td><span data-stat="text_count"></span></td></tr>
+      <tr><td>…whose text has been fetched and measured</td><td><span data-stat="sized"></span></td></tr>
+      <tr><td>IAST bytes over the measured items</td><td><span data-stat="transliterated_bytes" data-unit="mb"></span> MB</td></tr>
+      <tr><td>…with a scanned PDF (login-gated)</td><td><span data-stat="pdf_count"></span></td></tr>
+      <tr><td>Newest Sanskrit accession</td><td><span data-stat="last_changed"></span></td></tr>
+      <tr><td class="muted">Sanskrit and Prakrit items, same types</td><td class="muted"><span data-stat="sanskrit_prakrit_count"></span></td></tr>
+      <tr><td class="muted">Items mentioning Sanskrit alongside another language</td><td class="muted"><span data-stat="any_sanskrit_count"></span></td></tr>
+      <tr><td class="muted">The whole library, both catalogues</td><td class="muted"><span data-stat="library_count"></span></td></tr>
+      <tr><td class="muted">…of which with a public text</td><td class="muted"><span data-stat="library_text_count"></span></td></tr>
     </table>
 
     <h2>What is and is not counted</h2>
-    <p>The <em>universe</em> is the union of the two catalogues on their shared six-digit serial. An item
-      <em>has text</em> when Quantum serves a booktext for it. An item is <em>measured</em> when that text
-      has been fetched and its bytes counted; on the first build that is the Sanskrit-only slice, so the byte
-      figures are a floor, not a total. The "TXT only" toggle on the main page hides everything without a
-      public text.</p>
+    <p>This Atlas publishes the <strong>Sanskrit tier</strong> of the library and nothing else: items whose
+      catalogued language is exactly Sanskrit and that are books. "Books" here includes two of the
+      library's storage folders: "manuscripts", which holds block prints and horizontal-format printed books
+      (marked <em>horizontal</em>), and Quantum's Āgama folder of sutra-level editions. That is
+      what Sāgarasaṅgama reads from it. The rest of the library (Gujarati and Hindi books, articles,
+      magazines, audio, and editions that pair Sanskrit with a translation) is counted in the muted rows
+      above and otherwise left out. The two catalogues are joined on their shared six-digit serial. An item
+      <em>has text</em> when Quantum serves a booktext for it; every such item has been fetched and measured,
+      so the byte figures are complete.</p>
+
+    <h2>Browsing</h2>
+    <p>The default axis is the <strong>author</strong>: the classical author where the catalogue names one
+      (<code>sutra_author</code>), otherwise the author or editor the catalogue gives, marked <em>ed.</em> on
+      the row; 96% of the Sanskrit items have one. The second axis is the <strong>Āgama canon</strong>: class
+      (Aṅga, Upāṅga, Chedasūtra, Mūlasūtra, Cūlikāsūtra, Prakīrṇaka) and canonical text, assigned from the
+      library's own <code>agam_…</code> tags and nothing else, with the classes in their traditional order.
+      <span data-stat="canon_count"></span> of the Sanskrit items carry such a tag; the rest sit under
+      <em>Other works</em>. Horizontal-format prints and script are facts on the row, not shelves.</p>
 
     <h2>Where Quantum stops</h2>
     <p>Quantum's catalog and text index end in 2022, and the library's OCR pipeline appears to have stopped
-      with it. Items the library has accessioned since (about a fifth of it by count) are listed here from
-      the API alone, flagged <em>API only</em>, with no public text and no size.</p>
+      with it. Sanskrit items accessioned since are listed here from the API alone, flagged <em>API
+      only</em>, with no public text and no size. Because the cataloguing convention changed at the same
+      time (recent Sanskrit editions are tagged "Sanskrit, Hindi"), few of them fall in the Sanskrit tier at all.</p>
 
     <h2>Growth</h2>
     <p>Every API record carries the day it went online, so the growth series is measured from the
