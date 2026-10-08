@@ -1,4 +1,4 @@
-.PHONY: clearance fetch-catalog parse-catalog fetch-text extract-text count-sizes
+.PHONY: clearance fetch-catalog parse-catalog fetch-text extract-text count-sizes build changelog serve serve-fulltext
 
 # ============================================================================
 # Acquisition. NETWORKED; needs the private `rivulet` package (exit 2 without
@@ -58,3 +58,19 @@ extract-text:
 WORKERS ?=
 count-sizes:
 	python -m pipeline.count_sizes $(if $(WORKERS),--workers $(WORKERS)) $(ARGS)
+
+# The two catalogues + sizes -> docs/data/tree.json (and docs/VERSION).
+build:
+	python -m pipeline.build_tree $(ARGS)
+
+# web_date -> docs/data/changelog.json, monthly, cumulative.
+changelog:
+	python -m pipeline.build_changelog $(ARGS)
+
+# Serve docs/ on :8004. `serve-fulltext` also serves data/text_extract/ at
+# /text/<srno> for the txt badge -- localhost only, never published.
+serve:
+	python serve_docs.py
+
+serve-fulltext:
+	python serve_docs.py --fulltext

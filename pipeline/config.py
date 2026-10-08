@@ -34,3 +34,4 @@ TEXT_LOG_PATH = DATA_DIR / "text_fetch_log.jsonl"
 SIZES_PATH = DATA_DIR / "sizes.jsonl"               # make count-sizes
 
 TREE_PATH = DOCS_DATA_DIR / "tree.json"
+CHANGELOG_PATH = DOCS_DATA_DIR / "changelog.json"

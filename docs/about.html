@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Jain Quantum Atlas</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script>
+    (function () {
+      var saved = localStorage.getItem("theme");
+      var theme = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <style>
+    .about { max-width: 46rem; margin: 0 auto; padding: 1.5rem 1rem 4rem; line-height: 1.55; }
+    .about h2 { margin-top: 2rem; }
+    .about table { border-collapse: collapse; margin: 1rem 0; }
+    .about td, .about th { padding: 0.25rem 0.8rem 0.25rem 0; text-align: left; vertical-align: top; }
+    .about td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+    .about .muted { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <a href="./index.html" class="brand-title brand-title-link" style="text-decoration:none">Jain Quantum Atlas</a>
+      <span class="topbar-link" style="color: var(--muted)">About</span>
+    </div>
+    <nav class="topnav">
+      <button id="themeToggle" class="theme-toggle" type="button" title="Toggle light/dark theme"></button>
+    </nav>
+  </header>
+
+  <main class="about">
+    <h1>About this Atlas</h1>
+    <p>A browsable index of the <strong>Jain eLibrary</strong>, an online library of Jain literature
+      run by JAINA's education arm, as served by its two public faces:
+      <a href="https://jainqq.org" target="_blank" rel="noopener">jainqq.org</a> ("Jain Quantum"), a full-text
+      search engine that publishes each item's OCR text, and
+      <a href="https://jainelibrary.org" target="_blank" rel="noopener">jainelibrary.org</a>, whose open API
+      carries the richer metadata. This Atlas hosts no text; every item links back to Quantum's viewer.</p>
+
+    <h2>At a glance</h2>
+    <table>
+      <tr><td>Items catalogued (either site)</td><td><span data-stat="count"></span></td></tr>
+      <tr><td>…by the jainelibrary.org API</td><td><span data-stat="api_count"></span></td></tr>
+      <tr><td>…by Jain Quantum's catalog</td><td><span data-stat="quantum_count"></span></td></tr>
+      <tr><td>Items with a public OCR text on Quantum</td><td><span data-stat="text_count"></span></td></tr>
+      <tr><td>Items with a scanned PDF (login-gated)</td><td><span data-stat="pdf_count"></span></td></tr>
+      <tr><td>Items whose text has been fetched and measured</td><td><span data-stat="sized"></span></td></tr>
+      <tr><td>IAST bytes over those measured items (a floor)</td><td><span data-stat="transliterated_bytes" data-unit="mb"></span> MB</td></tr>
+      <tr><td>Newest accession</td><td><span data-stat="last_changed"></span></td></tr>
+    </table>
+
+    <h2>What is and is not counted</h2>
+    <p>The <em>universe</em> is the union of the two catalogues on their shared six-digit serial. An item
+      <em>has text</em> when Quantum serves a booktext for it. An item is <em>measured</em> when that text
+      has been fetched and its bytes counted; on the first build that is the Sanskrit-only slice, so the byte
+      figures are a floor, not a total. The "TXT only" toggle on the main page hides everything without a
+      public text.</p>
+
+    <h2>Where Quantum stops</h2>
+    <p>Quantum's catalog and text index end in 2022, and the library's OCR pipeline appears to have stopped
+      with it. Items the library has accessioned since (about a fifth of it by count) are listed here from
+      the API alone, flagged <em>API only</em>, with no public text and no size.</p>
+
+    <h2>Growth</h2>
+    <p>Every API record carries the day it went online, so the growth series is measured from the
+      library's own stamps: <span data-stat="changelog_months"></span> months,
+      <span data-stat="changelog_first"></span> to <span data-stat="changelog_last"></span>;
+      <span data-stat="undated_works"></span> items known only to Quantum carry no date.
+      The text series flattens after 2022 for the reason above.</p>
+
+    <h2>Caveats</h2>
+    <ul>
+      <li>The text is OCR, with its noise still in. The furniture rules remove the digitising libraries'
+        stamps and page numbers and nothing else.</li>
+      <li>"Sanskrit" per the catalogue includes many books with Hindi apparatus in the same script, and
+        the language field's convention changed around 2023, so <em>any Sanskrit</em> is the stable grouping.</li>
+      <li>Classification on the source is mostly by script and format; subject tokens exist on some records
+        but are not surfaced on either site.</li>
+    </ul>
+
+    <p class="muted">Source and pipeline: <a href="https://github.com/tylergneill/jain-quantum-atlas" target="_blank" rel="noopener">github.com/tylergneill/jain-quantum-atlas</a>.
+      Part of <a href="https://sagarasangama.info" target="_blank" rel="noopener">Sāgarasaṅgama</a>.
+      Metadata CC BY-NC-SA 4.0; the texts belong to the Jain eLibrary and its contributors.</p>
+  </main>
+
+  <script type="module" src="./about.js"></script>
+</body>
+</html>

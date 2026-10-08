@@ -1,0 +1,1888 @@
+{
+ "granularity": "month",
+ "source": "jainelibrary.org API web_date, the day each item went online",
+ "periods": [
+  {
+   "date": "2007-01-01",
+   "added": 274,
+   "cumulative_count": 274,
+   "cumulative_text_count": 274,
+   "cumulative_sized_count": 42,
+   "cumulative_iast_bytes_total": 29904178
+  },
+  {
+   "date": "2007-07-01",
+   "added": 5,
+   "cumulative_count": 279,
+   "cumulative_text_count": 279,
+   "cumulative_sized_count": 42,
+   "cumulative_iast_bytes_total": 29904178
+  },
+  {
+   "date": "2007-08-01",
+   "added": 41,
+   "cumulative_count": 320,
+   "cumulative_text_count": 320,
+   "cumulative_sized_count": 43,
+   "cumulative_iast_bytes_total": 30214980
+  },
+  {
+   "date": "2007-09-01",
+   "added": 38,
+   "cumulative_count": 358,
+   "cumulative_text_count": 358,
+   "cumulative_sized_count": 45,
+   "cumulative_iast_bytes_total": 32584635
+  },
+  {
+   "date": "2007-11-01",
+   "added": 21,
+   "cumulative_count": 379,
+   "cumulative_text_count": 379,
+   "cumulative_sized_count": 51,
+   "cumulative_iast_bytes_total": 39185087
+  },
+  {
+   "date": "2007-12-01",
+   "added": 29,
+   "cumulative_count": 408,
+   "cumulative_text_count": 408,
+   "cumulative_sized_count": 51,
+   "cumulative_iast_bytes_total": 39185087
+  },
+  {
+   "date": "2008-01-01",
+   "added": 10,
+   "cumulative_count": 418,
+   "cumulative_text_count": 418,
+   "cumulative_sized_count": 51,
+   "cumulative_iast_bytes_total": 39185087
+  },
+  {
+   "date": "2008-02-01",
+   "added": 42,
+   "cumulative_count": 460,
+   "cumulative_text_count": 460,
+   "cumulative_sized_count": 51,
+   "cumulative_iast_bytes_total": 39185087
+  },
+  {
+   "date": "2008-03-01",
+   "added": 95,
+   "cumulative_count": 555,
+   "cumulative_text_count": 555,
+   "cumulative_sized_count": 54,
+   "cumulative_iast_bytes_total": 41098847
+  },
+  {
+   "date": "2008-04-01",
+   "added": 53,
+   "cumulative_count": 608,
+   "cumulative_text_count": 608,
+   "cumulative_sized_count": 55,
+   "cumulative_iast_bytes_total": 41429245
+  },
+  {
+   "date": "2008-05-01",
+   "added": 101,
+   "cumulative_count": 709,
+   "cumulative_text_count": 709,
+   "cumulative_sized_count": 63,
+   "cumulative_iast_bytes_total": 45580546
+  },
+  {
+   "date": "2008-06-01",
+   "added": 44,
+   "cumulative_count": 753,
+   "cumulative_text_count": 753,
+   "cumulative_sized_count": 66,
+   "cumulative_iast_bytes_total": 48716663
+  },
+  {
+   "date": "2008-07-01",
+   "added": 123,
+   "cumulative_count": 876,
+   "cumulative_text_count": 876,
+   "cumulative_sized_count": 80,
+   "cumulative_iast_bytes_total": 58816695
+  },
+  {
+   "date": "2008-08-01",
+   "added": 28,
+   "cumulative_count": 904,
+   "cumulative_text_count": 904,
+   "cumulative_sized_count": 81,
+   "cumulative_iast_bytes_total": 59891880
+  },
+  {
+   "date": "2008-09-01",
+   "added": 54,
+   "cumulative_count": 958,
+   "cumulative_text_count": 958,
+   "cumulative_sized_count": 82,
+   "cumulative_iast_bytes_total": 60304487
+  },
+  {
+   "date": "2008-10-01",
+   "added": 186,
+   "cumulative_count": 1144,
+   "cumulative_text_count": 1144,
+   "cumulative_sized_count": 83,
+   "cumulative_iast_bytes_total": 60376993
+  },
+  {
+   "date": "2008-11-01",
+   "added": 31,
+   "cumulative_count": 1175,
+   "cumulative_text_count": 1175,
+   "cumulative_sized_count": 83,
+   "cumulative_iast_bytes_total": 60376993
+  },
+  {
+   "date": "2008-12-01",
+   "added": 46,
+   "cumulative_count": 1221,
+   "cumulative_text_count": 1220,
+   "cumulative_sized_count": 83,
+   "cumulative_iast_bytes_total": 60376993
+  },
+  {
+   "date": "2009-01-01",
+   "added": 52,
+   "cumulative_count": 1273,
+   "cumulative_text_count": 1272,
+   "cumulative_sized_count": 86,
+   "cumulative_iast_bytes_total": 63028748
+  },
+  {
+   "date": "2009-02-01",
+   "added": 49,
+   "cumulative_count": 1322,
+   "cumulative_text_count": 1321,
+   "cumulative_sized_count": 92,
+   "cumulative_iast_bytes_total": 66496804
+  },
+  {
+   "date": "2009-03-01",
+   "added": 54,
+   "cumulative_count": 1376,
+   "cumulative_text_count": 1375,
+   "cumulative_sized_count": 101,
+   "cumulative_iast_bytes_total": 78543575
+  },
+  {
+   "date": "2009-04-01",
+   "added": 70,
+   "cumulative_count": 1446,
+   "cumulative_text_count": 1445,
+   "cumulative_sized_count": 101,
+   "cumulative_iast_bytes_total": 78543575
+  },
+  {
+   "date": "2009-05-01",
+   "added": 68,
+   "cumulative_count": 1514,
+   "cumulative_text_count": 1513,
+   "cumulative_sized_count": 101,
+   "cumulative_iast_bytes_total": 78543575
+  },
+  {
+   "date": "2009-06-01",
+   "added": 43,
+   "cumulative_count": 1557,
+   "cumulative_text_count": 1556,
+   "cumulative_sized_count": 101,
+   "cumulative_iast_bytes_total": 78543575
+  },
+  {
+   "date": "2009-07-01",
+   "added": 197,
+   "cumulative_count": 1754,
+   "cumulative_text_count": 1753,
+   "cumulative_sized_count": 102,
+   "cumulative_iast_bytes_total": 79735339
+  },
+  {
+   "date": "2009-08-01",
+   "added": 147,
+   "cumulative_count": 1901,
+   "cumulative_text_count": 1900,
+   "cumulative_sized_count": 103,
+   "cumulative_iast_bytes_total": 80326654
+  },
+  {
+   "date": "2009-09-01",
+   "added": 53,
+   "cumulative_count": 1954,
+   "cumulative_text_count": 1952,
+   "cumulative_sized_count": 109,
+   "cumulative_iast_bytes_total": 88047472
+  },
+  {
+   "date": "2009-10-01",
+   "added": 82,
+   "cumulative_count": 2036,
+   "cumulative_text_count": 2030,
+   "cumulative_sized_count": 125,
+   "cumulative_iast_bytes_total": 102095041
+  },
+  {
+   "date": "2009-11-01",
+   "added": 137,
+   "cumulative_count": 2173,
+   "cumulative_text_count": 2167,
+   "cumulative_sized_count": 127,
+   "cumulative_iast_bytes_total": 104547928
+  },
+  {
+   "date": "2009-12-01",
+   "added": 113,
+   "cumulative_count": 2286,
+   "cumulative_text_count": 2280,
+   "cumulative_sized_count": 146,
+   "cumulative_iast_bytes_total": 119508927
+  },
+  {
+   "date": "2010-01-01",
+   "added": 60,
+   "cumulative_count": 2346,
+   "cumulative_text_count": 2340,
+   "cumulative_sized_count": 154,
+   "cumulative_iast_bytes_total": 123417190
+  },
+  {
+   "date": "2010-02-01",
+   "added": 57,
+   "cumulative_count": 2403,
+   "cumulative_text_count": 2397,
+   "cumulative_sized_count": 159,
+   "cumulative_iast_bytes_total": 128057099
+  },
+  {
+   "date": "2010-03-01",
+   "added": 95,
+   "cumulative_count": 2498,
+   "cumulative_text_count": 2488,
+   "cumulative_sized_count": 159,
+   "cumulative_iast_bytes_total": 128057099
+  },
+  {
+   "date": "2010-04-01",
+   "added": 46,
+   "cumulative_count": 2544,
+   "cumulative_text_count": 2534,
+   "cumulative_sized_count": 166,
+   "cumulative_iast_bytes_total": 137146853
+  },
+  {
+   "date": "2010-05-01",
+   "added": 252,
+   "cumulative_count": 2796,
+   "cumulative_text_count": 2786,
+   "cumulative_sized_count": 193,
+   "cumulative_iast_bytes_total": 147796427
+  },
+  {
+   "date": "2010-06-01",
+   "added": 49,
+   "cumulative_count": 2845,
+   "cumulative_text_count": 2835,
+   "cumulative_sized_count": 207,
+   "cumulative_iast_bytes_total": 154929838
+  },
+  {
+   "date": "2010-07-01",
+   "added": 49,
+   "cumulative_count": 2894,
+   "cumulative_text_count": 2884,
+   "cumulative_sized_count": 214,
+   "cumulative_iast_bytes_total": 160518185
+  },
+  {
+   "date": "2010-08-01",
+   "added": 95,
+   "cumulative_count": 2989,
+   "cumulative_text_count": 2979,
+   "cumulative_sized_count": 220,
+   "cumulative_iast_bytes_total": 162515698
+  },
+  {
+   "date": "2010-09-01",
+   "added": 99,
+   "cumulative_count": 3088,
+   "cumulative_text_count": 3078,
+   "cumulative_sized_count": 222,
+   "cumulative_iast_bytes_total": 163065599
+  },
+  {
+   "date": "2010-10-01",
+   "added": 94,
+   "cumulative_count": 3182,
+   "cumulative_text_count": 3172,
+   "cumulative_sized_count": 229,
+   "cumulative_iast_bytes_total": 167311757
+  },
+  {
+   "date": "2010-11-01",
+   "added": 115,
+   "cumulative_count": 3297,
+   "cumulative_text_count": 3287,
+   "cumulative_sized_count": 266,
+   "cumulative_iast_bytes_total": 196252999
+  },
+  {
+   "date": "2010-12-01",
+   "added": 490,
+   "cumulative_count": 3787,
+   "cumulative_text_count": 3777,
+   "cumulative_sized_count": 268,
+   "cumulative_iast_bytes_total": 197642218
+  },
+  {
+   "date": "2010-14-01",
+   "added": 12,
+   "cumulative_count": 3799,
+   "cumulative_text_count": 3789,
+   "cumulative_sized_count": 268,
+   "cumulative_iast_bytes_total": 197642218
+  },
+  {
+   "date": "2010-40-01",
+   "added": 1,
+   "cumulative_count": 3800,
+   "cumulative_text_count": 3790,
+   "cumulative_sized_count": 268,
+   "cumulative_iast_bytes_total": 197642218
+  },
+  {
+   "date": "2011-01-01",
+   "added": 538,
+   "cumulative_count": 4338,
+   "cumulative_text_count": 4328,
+   "cumulative_sized_count": 268,
+   "cumulative_iast_bytes_total": 197642218
+  },
+  {
+   "date": "2011-02-01",
+   "added": 468,
+   "cumulative_count": 4806,
+   "cumulative_text_count": 4796,
+   "cumulative_sized_count": 277,
+   "cumulative_iast_bytes_total": 205506308
+  },
+  {
+   "date": "2011-03-01",
+   "added": 168,
+   "cumulative_count": 4974,
+   "cumulative_text_count": 4963,
+   "cumulative_sized_count": 282,
+   "cumulative_iast_bytes_total": 210428044
+  },
+  {
+   "date": "2011-04-01",
+   "added": 2035,
+   "cumulative_count": 7009,
+   "cumulative_text_count": 6998,
+   "cumulative_sized_count": 298,
+   "cumulative_iast_bytes_total": 221751333
+  },
+  {
+   "date": "2011-05-01",
+   "added": 185,
+   "cumulative_count": 7194,
+   "cumulative_text_count": 7183,
+   "cumulative_sized_count": 344,
+   "cumulative_iast_bytes_total": 252133570
+  },
+  {
+   "date": "2011-06-01",
+   "added": 136,
+   "cumulative_count": 7330,
+   "cumulative_text_count": 7319,
+   "cumulative_sized_count": 392,
+   "cumulative_iast_bytes_total": 276778632
+  },
+  {
+   "date": "2011-07-01",
+   "added": 231,
+   "cumulative_count": 7561,
+   "cumulative_text_count": 7550,
+   "cumulative_sized_count": 447,
+   "cumulative_iast_bytes_total": 301676882
+  },
+  {
+   "date": "2011-08-01",
+   "added": 165,
+   "cumulative_count": 7726,
+   "cumulative_text_count": 7715,
+   "cumulative_sized_count": 511,
+   "cumulative_iast_bytes_total": 345660869
+  },
+  {
+   "date": "2011-09-01",
+   "added": 54,
+   "cumulative_count": 7780,
+   "cumulative_text_count": 7768,
+   "cumulative_sized_count": 511,
+   "cumulative_iast_bytes_total": 345660869
+  },
+  {
+   "date": "2011-10-01",
+   "added": 174,
+   "cumulative_count": 7954,
+   "cumulative_text_count": 7942,
+   "cumulative_sized_count": 515,
+   "cumulative_iast_bytes_total": 348288074
+  },
+  {
+   "date": "2011-11-01",
+   "added": 52,
+   "cumulative_count": 8006,
+   "cumulative_text_count": 7994,
+   "cumulative_sized_count": 515,
+   "cumulative_iast_bytes_total": 348288074
+  },
+  {
+   "date": "2011-12-01",
+   "added": 69,
+   "cumulative_count": 8075,
+   "cumulative_text_count": 8063,
+   "cumulative_sized_count": 517,
+   "cumulative_iast_bytes_total": 350529790
+  },
+  {
+   "date": "2012-01-01",
+   "added": 322,
+   "cumulative_count": 8397,
+   "cumulative_text_count": 8385,
+   "cumulative_sized_count": 526,
+   "cumulative_iast_bytes_total": 355747908
+  },
+  {
+   "date": "2012-02-01",
+   "added": 81,
+   "cumulative_count": 8478,
+   "cumulative_text_count": 8465,
+   "cumulative_sized_count": 535,
+   "cumulative_iast_bytes_total": 359852224
+  },
+  {
+   "date": "2012-03-01",
+   "added": 155,
+   "cumulative_count": 8633,
+   "cumulative_text_count": 8620,
+   "cumulative_sized_count": 536,
+   "cumulative_iast_bytes_total": 360917774
+  },
+  {
+   "date": "2012-04-01",
+   "added": 205,
+   "cumulative_count": 8838,
+   "cumulative_text_count": 8825,
+   "cumulative_sized_count": 536,
+   "cumulative_iast_bytes_total": 360917774
+  },
+  {
+   "date": "2012-05-01",
+   "added": 83,
+   "cumulative_count": 8921,
+   "cumulative_text_count": 8908,
+   "cumulative_sized_count": 540,
+   "cumulative_iast_bytes_total": 361546475
+  },
+  {
+   "date": "2012-06-01",
+   "added": 96,
+   "cumulative_count": 9017,
+   "cumulative_text_count": 9004,
+   "cumulative_sized_count": 540,
+   "cumulative_iast_bytes_total": 361546475
+  },
+  {
+   "date": "2012-07-01",
+   "added": 21,
+   "cumulative_count": 9038,
+   "cumulative_text_count": 9025,
+   "cumulative_sized_count": 540,
+   "cumulative_iast_bytes_total": 361546475
+  },
+  {
+   "date": "2012-08-01",
+   "added": 24,
+   "cumulative_count": 9062,
+   "cumulative_text_count": 9049,
+   "cumulative_sized_count": 540,
+   "cumulative_iast_bytes_total": 361546475
+  },
+  {
+   "date": "2012-09-01",
+   "added": 48,
+   "cumulative_count": 9110,
+   "cumulative_text_count": 9097,
+   "cumulative_sized_count": 540,
+   "cumulative_iast_bytes_total": 361546475
+  },
+  {
+   "date": "2012-10-01",
+   "added": 537,
+   "cumulative_count": 9647,
+   "cumulative_text_count": 9634,
+   "cumulative_sized_count": 542,
+   "cumulative_iast_bytes_total": 364176941
+  },
+  {
+   "date": "2012-11-01",
+   "added": 74,
+   "cumulative_count": 9721,
+   "cumulative_text_count": 9708,
+   "cumulative_sized_count": 542,
+   "cumulative_iast_bytes_total": 364176941
+  },
+  {
+   "date": "2012-12-01",
+   "added": 70,
+   "cumulative_count": 9791,
+   "cumulative_text_count": 9778,
+   "cumulative_sized_count": 547,
+   "cumulative_iast_bytes_total": 365903786
+  },
+  {
+   "date": "2013-01-01",
+   "added": 47,
+   "cumulative_count": 9838,
+   "cumulative_text_count": 9825,
+   "cumulative_sized_count": 549,
+   "cumulative_iast_bytes_total": 367227786
+  },
+  {
+   "date": "2013-02-01",
+   "added": 96,
+   "cumulative_count": 9934,
+   "cumulative_text_count": 9921,
+   "cumulative_sized_count": 551,
+   "cumulative_iast_bytes_total": 367843999
+  },
+  {
+   "date": "2013-03-01",
+   "added": 94,
+   "cumulative_count": 10028,
+   "cumulative_text_count": 10015,
+   "cumulative_sized_count": 551,
+   "cumulative_iast_bytes_total": 367843999
+  },
+  {
+   "date": "2013-04-01",
+   "added": 119,
+   "cumulative_count": 10147,
+   "cumulative_text_count": 10134,
+   "cumulative_sized_count": 554,
+   "cumulative_iast_bytes_total": 368622976
+  },
+  {
+   "date": "2013-05-01",
+   "added": 128,
+   "cumulative_count": 10275,
+   "cumulative_text_count": 10262,
+   "cumulative_sized_count": 570,
+   "cumulative_iast_bytes_total": 379576751
+  },
+  {
+   "date": "2013-06-01",
+   "added": 93,
+   "cumulative_count": 10368,
+   "cumulative_text_count": 10355,
+   "cumulative_sized_count": 573,
+   "cumulative_iast_bytes_total": 381842526
+  },
+  {
+   "date": "2013-07-01",
+   "added": 201,
+   "cumulative_count": 10569,
+   "cumulative_text_count": 10556,
+   "cumulative_sized_count": 581,
+   "cumulative_iast_bytes_total": 386878348
+  },
+  {
+   "date": "2013-08-01",
+   "added": 72,
+   "cumulative_count": 10641,
+   "cumulative_text_count": 10628,
+   "cumulative_sized_count": 600,
+   "cumulative_iast_bytes_total": 394951930
+  },
+  {
+   "date": "2013-09-01",
+   "added": 1311,
+   "cumulative_count": 11952,
+   "cumulative_text_count": 11939,
+   "cumulative_sized_count": 611,
+   "cumulative_iast_bytes_total": 401644804
+  },
+  {
+   "date": "2013-10-01",
+   "added": 126,
+   "cumulative_count": 12078,
+   "cumulative_text_count": 12065,
+   "cumulative_sized_count": 612,
+   "cumulative_iast_bytes_total": 401665079
+  },
+  {
+   "date": "2013-11-01",
+   "added": 73,
+   "cumulative_count": 12151,
+   "cumulative_text_count": 12138,
+   "cumulative_sized_count": 613,
+   "cumulative_iast_bytes_total": 402897869
+  },
+  {
+   "date": "2013-12-01",
+   "added": 128,
+   "cumulative_count": 12279,
+   "cumulative_text_count": 12266,
+   "cumulative_sized_count": 616,
+   "cumulative_iast_bytes_total": 403724143
+  },
+  {
+   "date": "2014-01-01",
+   "added": 82,
+   "cumulative_count": 12361,
+   "cumulative_text_count": 12348,
+   "cumulative_sized_count": 616,
+   "cumulative_iast_bytes_total": 403724143
+  },
+  {
+   "date": "2014-02-01",
+   "added": 56,
+   "cumulative_count": 12417,
+   "cumulative_text_count": 12404,
+   "cumulative_sized_count": 619,
+   "cumulative_iast_bytes_total": 405806854
+  },
+  {
+   "date": "2014-03-01",
+   "added": 91,
+   "cumulative_count": 12508,
+   "cumulative_text_count": 12495,
+   "cumulative_sized_count": 634,
+   "cumulative_iast_bytes_total": 414483511
+  },
+  {
+   "date": "2014-04-01",
+   "added": 37,
+   "cumulative_count": 12545,
+   "cumulative_text_count": 12532,
+   "cumulative_sized_count": 651,
+   "cumulative_iast_bytes_total": 432366685
+  },
+  {
+   "date": "2014-05-01",
+   "added": 13,
+   "cumulative_count": 12558,
+   "cumulative_text_count": 12545,
+   "cumulative_sized_count": 651,
+   "cumulative_iast_bytes_total": 432366685
+  },
+  {
+   "date": "2014-06-01",
+   "added": 50,
+   "cumulative_count": 12608,
+   "cumulative_text_count": 12595,
+   "cumulative_sized_count": 651,
+   "cumulative_iast_bytes_total": 432366685
+  },
+  {
+   "date": "2014-07-01",
+   "added": 76,
+   "cumulative_count": 12684,
+   "cumulative_text_count": 12671,
+   "cumulative_sized_count": 657,
+   "cumulative_iast_bytes_total": 436544513
+  },
+  {
+   "date": "2014-08-01",
+   "added": 45,
+   "cumulative_count": 12729,
+   "cumulative_text_count": 12715,
+   "cumulative_sized_count": 658,
+   "cumulative_iast_bytes_total": 437122336
+  },
+  {
+   "date": "2014-09-01",
+   "added": 41,
+   "cumulative_count": 12770,
+   "cumulative_text_count": 12756,
+   "cumulative_sized_count": 658,
+   "cumulative_iast_bytes_total": 437122336
+  },
+  {
+   "date": "2014-10-01",
+   "added": 97,
+   "cumulative_count": 12867,
+   "cumulative_text_count": 12853,
+   "cumulative_sized_count": 658,
+   "cumulative_iast_bytes_total": 437122336
+  },
+  {
+   "date": "2014-11-01",
+   "added": 69,
+   "cumulative_count": 12936,
+   "cumulative_text_count": 12921,
+   "cumulative_sized_count": 662,
+   "cumulative_iast_bytes_total": 437953272
+  },
+  {
+   "date": "2014-12-01",
+   "added": 146,
+   "cumulative_count": 13082,
+   "cumulative_text_count": 13067,
+   "cumulative_sized_count": 662,
+   "cumulative_iast_bytes_total": 437953272
+  },
+  {
+   "date": "2015-01-01",
+   "added": 67,
+   "cumulative_count": 13149,
+   "cumulative_text_count": 13134,
+   "cumulative_sized_count": 665,
+   "cumulative_iast_bytes_total": 438836506
+  },
+  {
+   "date": "2015-02-01",
+   "added": 58,
+   "cumulative_count": 13207,
+   "cumulative_text_count": 13192,
+   "cumulative_sized_count": 671,
+   "cumulative_iast_bytes_total": 441296906
+  },
+  {
+   "date": "2015-03-01",
+   "added": 77,
+   "cumulative_count": 13284,
+   "cumulative_text_count": 13269,
+   "cumulative_sized_count": 685,
+   "cumulative_iast_bytes_total": 452706671
+  },
+  {
+   "date": "2015-04-01",
+   "added": 55,
+   "cumulative_count": 13339,
+   "cumulative_text_count": 13324,
+   "cumulative_sized_count": 696,
+   "cumulative_iast_bytes_total": 471193518
+  },
+  {
+   "date": "2015-05-01",
+   "added": 66,
+   "cumulative_count": 13405,
+   "cumulative_text_count": 13390,
+   "cumulative_sized_count": 734,
+   "cumulative_iast_bytes_total": 496596089
+  },
+  {
+   "date": "2015-06-01",
+   "added": 50,
+   "cumulative_count": 13455,
+   "cumulative_text_count": 13440,
+   "cumulative_sized_count": 756,
+   "cumulative_iast_bytes_total": 532845331
+  },
+  {
+   "date": "2015-07-01",
+   "added": 76,
+   "cumulative_count": 13531,
+   "cumulative_text_count": 13516,
+   "cumulative_sized_count": 778,
+   "cumulative_iast_bytes_total": 546807367
+  },
+  {
+   "date": "2015-08-01",
+   "added": 105,
+   "cumulative_count": 13636,
+   "cumulative_text_count": 13621,
+   "cumulative_sized_count": 822,
+   "cumulative_iast_bytes_total": 570692253
+  },
+  {
+   "date": "2015-09-01",
+   "added": 145,
+   "cumulative_count": 13781,
+   "cumulative_text_count": 13766,
+   "cumulative_sized_count": 859,
+   "cumulative_iast_bytes_total": 607545168
+  },
+  {
+   "date": "2015-10-01",
+   "added": 57,
+   "cumulative_count": 13838,
+   "cumulative_text_count": 13823,
+   "cumulative_sized_count": 859,
+   "cumulative_iast_bytes_total": 607545168
+  },
+  {
+   "date": "2015-11-01",
+   "added": 96,
+   "cumulative_count": 13934,
+   "cumulative_text_count": 13919,
+   "cumulative_sized_count": 875,
+   "cumulative_iast_bytes_total": 616355599
+  },
+  {
+   "date": "2015-12-01",
+   "added": 50,
+   "cumulative_count": 13984,
+   "cumulative_text_count": 13969,
+   "cumulative_sized_count": 876,
+   "cumulative_iast_bytes_total": 616710834
+  },
+  {
+   "date": "2016-01-01",
+   "added": 75,
+   "cumulative_count": 14059,
+   "cumulative_text_count": 14044,
+   "cumulative_sized_count": 884,
+   "cumulative_iast_bytes_total": 624753669
+  },
+  {
+   "date": "2016-02-01",
+   "added": 350,
+   "cumulative_count": 14409,
+   "cumulative_text_count": 14394,
+   "cumulative_sized_count": 989,
+   "cumulative_iast_bytes_total": 687998227
+  },
+  {
+   "date": "2016-03-01",
+   "added": 496,
+   "cumulative_count": 14905,
+   "cumulative_text_count": 14889,
+   "cumulative_sized_count": 1229,
+   "cumulative_iast_bytes_total": 832389949
+  },
+  {
+   "date": "2016-04-01",
+   "added": 170,
+   "cumulative_count": 15075,
+   "cumulative_text_count": 15059,
+   "cumulative_sized_count": 1324,
+   "cumulative_iast_bytes_total": 893564253
+  },
+  {
+   "date": "2016-05-01",
+   "added": 921,
+   "cumulative_count": 15996,
+   "cumulative_text_count": 15980,
+   "cumulative_sized_count": 1336,
+   "cumulative_iast_bytes_total": 910155962
+  },
+  {
+   "date": "2016-06-01",
+   "added": 1254,
+   "cumulative_count": 17250,
+   "cumulative_text_count": 17222,
+   "cumulative_sized_count": 1339,
+   "cumulative_iast_bytes_total": 912968847
+  },
+  {
+   "date": "2016-07-01",
+   "added": 118,
+   "cumulative_count": 17368,
+   "cumulative_text_count": 17340,
+   "cumulative_sized_count": 1340,
+   "cumulative_iast_bytes_total": 913173815
+  },
+  {
+   "date": "2016-08-01",
+   "added": 40,
+   "cumulative_count": 17408,
+   "cumulative_text_count": 17380,
+   "cumulative_sized_count": 1345,
+   "cumulative_iast_bytes_total": 915158973
+  },
+  {
+   "date": "2016-09-01",
+   "added": 127,
+   "cumulative_count": 17535,
+   "cumulative_text_count": 17506,
+   "cumulative_sized_count": 1345,
+   "cumulative_iast_bytes_total": 915158973
+  },
+  {
+   "date": "2016-10-01",
+   "added": 136,
+   "cumulative_count": 17671,
+   "cumulative_text_count": 17642,
+   "cumulative_sized_count": 1347,
+   "cumulative_iast_bytes_total": 915489828
+  },
+  {
+   "date": "2016-11-01",
+   "added": 168,
+   "cumulative_count": 17839,
+   "cumulative_text_count": 17809,
+   "cumulative_sized_count": 1353,
+   "cumulative_iast_bytes_total": 918633505
+  },
+  {
+   "date": "2016-12-01",
+   "added": 96,
+   "cumulative_count": 17935,
+   "cumulative_text_count": 17905,
+   "cumulative_sized_count": 1353,
+   "cumulative_iast_bytes_total": 918633505
+  },
+  {
+   "date": "2016-13-01",
+   "added": 3,
+   "cumulative_count": 17938,
+   "cumulative_text_count": 17908,
+   "cumulative_sized_count": 1353,
+   "cumulative_iast_bytes_total": 918633505
+  },
+  {
+   "date": "2017-01-01",
+   "added": 99,
+   "cumulative_count": 18037,
+   "cumulative_text_count": 18007,
+   "cumulative_sized_count": 1356,
+   "cumulative_iast_bytes_total": 920352674
+  },
+  {
+   "date": "2017-02-01",
+   "added": 57,
+   "cumulative_count": 18094,
+   "cumulative_text_count": 18064,
+   "cumulative_sized_count": 1356,
+   "cumulative_iast_bytes_total": 920352674
+  },
+  {
+   "date": "2017-03-01",
+   "added": 91,
+   "cumulative_count": 18185,
+   "cumulative_text_count": 18155,
+   "cumulative_sized_count": 1368,
+   "cumulative_iast_bytes_total": 923853388
+  },
+  {
+   "date": "2017-04-01",
+   "added": 118,
+   "cumulative_count": 18303,
+   "cumulative_text_count": 18273,
+   "cumulative_sized_count": 1390,
+   "cumulative_iast_bytes_total": 931979982
+  },
+  {
+   "date": "2017-05-01",
+   "added": 551,
+   "cumulative_count": 18854,
+   "cumulative_text_count": 18824,
+   "cumulative_sized_count": 1391,
+   "cumulative_iast_bytes_total": 933466740
+  },
+  {
+   "date": "2017-06-01",
+   "added": 451,
+   "cumulative_count": 19305,
+   "cumulative_text_count": 19275,
+   "cumulative_sized_count": 1391,
+   "cumulative_iast_bytes_total": 933466740
+  },
+  {
+   "date": "2017-07-01",
+   "added": 425,
+   "cumulative_count": 19730,
+   "cumulative_text_count": 19700,
+   "cumulative_sized_count": 1393,
+   "cumulative_iast_bytes_total": 934103652
+  },
+  {
+   "date": "2017-08-01",
+   "added": 131,
+   "cumulative_count": 19861,
+   "cumulative_text_count": 19831,
+   "cumulative_sized_count": 1418,
+   "cumulative_iast_bytes_total": 948635579
+  },
+  {
+   "date": "2017-09-01",
+   "added": 82,
+   "cumulative_count": 19943,
+   "cumulative_text_count": 19913,
+   "cumulative_sized_count": 1429,
+   "cumulative_iast_bytes_total": 952296609
+  },
+  {
+   "date": "2017-10-01",
+   "added": 122,
+   "cumulative_count": 20065,
+   "cumulative_text_count": 20033,
+   "cumulative_sized_count": 1439,
+   "cumulative_iast_bytes_total": 959287419
+  },
+  {
+   "date": "2017-11-01",
+   "added": 143,
+   "cumulative_count": 20208,
+   "cumulative_text_count": 20176,
+   "cumulative_sized_count": 1460,
+   "cumulative_iast_bytes_total": 965563074
+  },
+  {
+   "date": "2017-12-01",
+   "added": 97,
+   "cumulative_count": 20305,
+   "cumulative_text_count": 20273,
+   "cumulative_sized_count": 1473,
+   "cumulative_iast_bytes_total": 970032723
+  },
+  {
+   "date": "2018-01-01",
+   "added": 100,
+   "cumulative_count": 20405,
+   "cumulative_text_count": 20373,
+   "cumulative_sized_count": 1504,
+   "cumulative_iast_bytes_total": 986653016
+  },
+  {
+   "date": "2018-02-01",
+   "added": 71,
+   "cumulative_count": 20476,
+   "cumulative_text_count": 20444,
+   "cumulative_sized_count": 1535,
+   "cumulative_iast_bytes_total": 998434978
+  },
+  {
+   "date": "2018-03-01",
+   "added": 40,
+   "cumulative_count": 20516,
+   "cumulative_text_count": 20484,
+   "cumulative_sized_count": 1545,
+   "cumulative_iast_bytes_total": 1003043603
+  },
+  {
+   "date": "2018-04-01",
+   "added": 85,
+   "cumulative_count": 20601,
+   "cumulative_text_count": 20569,
+   "cumulative_sized_count": 1558,
+   "cumulative_iast_bytes_total": 1011662911
+  },
+  {
+   "date": "2018-05-01",
+   "added": 67,
+   "cumulative_count": 20668,
+   "cumulative_text_count": 20636,
+   "cumulative_sized_count": 1568,
+   "cumulative_iast_bytes_total": 1013024984
+  },
+  {
+   "date": "2018-06-01",
+   "added": 79,
+   "cumulative_count": 20747,
+   "cumulative_text_count": 20715,
+   "cumulative_sized_count": 1590,
+   "cumulative_iast_bytes_total": 1031204457
+  },
+  {
+   "date": "2018-07-01",
+   "added": 100,
+   "cumulative_count": 20847,
+   "cumulative_text_count": 20815,
+   "cumulative_sized_count": 1602,
+   "cumulative_iast_bytes_total": 1031713326
+  },
+  {
+   "date": "2018-08-01",
+   "added": 106,
+   "cumulative_count": 20953,
+   "cumulative_text_count": 20921,
+   "cumulative_sized_count": 1611,
+   "cumulative_iast_bytes_total": 1035419199
+  },
+  {
+   "date": "2018-09-01",
+   "added": 53,
+   "cumulative_count": 21006,
+   "cumulative_text_count": 20974,
+   "cumulative_sized_count": 1616,
+   "cumulative_iast_bytes_total": 1041362807
+  },
+  {
+   "date": "2018-10-01",
+   "added": 583,
+   "cumulative_count": 21589,
+   "cumulative_text_count": 21557,
+   "cumulative_sized_count": 1627,
+   "cumulative_iast_bytes_total": 1053780994
+  },
+  {
+   "date": "2018-11-01",
+   "added": 916,
+   "cumulative_count": 22505,
+   "cumulative_text_count": 22473,
+   "cumulative_sized_count": 1629,
+   "cumulative_iast_bytes_total": 1054085449
+  },
+  {
+   "date": "2018-12-01",
+   "added": 116,
+   "cumulative_count": 22621,
+   "cumulative_text_count": 22589,
+   "cumulative_sized_count": 1629,
+   "cumulative_iast_bytes_total": 1054085449
+  },
+  {
+   "date": "2019-01-01",
+   "added": 127,
+   "cumulative_count": 22748,
+   "cumulative_text_count": 22715,
+   "cumulative_sized_count": 1661,
+   "cumulative_iast_bytes_total": 1066932066
+  },
+  {
+   "date": "2019-02-01",
+   "added": 147,
+   "cumulative_count": 22895,
+   "cumulative_text_count": 22862,
+   "cumulative_sized_count": 1676,
+   "cumulative_iast_bytes_total": 1074464234
+  },
+  {
+   "date": "2019-03-01",
+   "added": 109,
+   "cumulative_count": 23004,
+   "cumulative_text_count": 22970,
+   "cumulative_sized_count": 1680,
+   "cumulative_iast_bytes_total": 1076543692
+  },
+  {
+   "date": "2019-04-01",
+   "added": 139,
+   "cumulative_count": 23143,
+   "cumulative_text_count": 23109,
+   "cumulative_sized_count": 1686,
+   "cumulative_iast_bytes_total": 1079480559
+  },
+  {
+   "date": "2019-05-01",
+   "added": 55,
+   "cumulative_count": 23198,
+   "cumulative_text_count": 23164,
+   "cumulative_sized_count": 1688,
+   "cumulative_iast_bytes_total": 1081258385
+  },
+  {
+   "date": "2019-06-01",
+   "added": 95,
+   "cumulative_count": 23293,
+   "cumulative_text_count": 23257,
+   "cumulative_sized_count": 1708,
+   "cumulative_iast_bytes_total": 1096629383
+  },
+  {
+   "date": "2019-07-01",
+   "added": 160,
+   "cumulative_count": 23453,
+   "cumulative_text_count": 23417,
+   "cumulative_sized_count": 1709,
+   "cumulative_iast_bytes_total": 1096846177
+  },
+  {
+   "date": "2019-08-01",
+   "added": 153,
+   "cumulative_count": 23606,
+   "cumulative_text_count": 23570,
+   "cumulative_sized_count": 1716,
+   "cumulative_iast_bytes_total": 1098428489
+  },
+  {
+   "date": "2019-09-01",
+   "added": 49,
+   "cumulative_count": 23655,
+   "cumulative_text_count": 23619,
+   "cumulative_sized_count": 1716,
+   "cumulative_iast_bytes_total": 1098428489
+  },
+  {
+   "date": "2019-10-01",
+   "added": 59,
+   "cumulative_count": 23714,
+   "cumulative_text_count": 23678,
+   "cumulative_sized_count": 1738,
+   "cumulative_iast_bytes_total": 1117860699
+  },
+  {
+   "date": "2019-11-01",
+   "added": 267,
+   "cumulative_count": 23981,
+   "cumulative_text_count": 23945,
+   "cumulative_sized_count": 1795,
+   "cumulative_iast_bytes_total": 1145785059
+  },
+  {
+   "date": "2019-12-01",
+   "added": 67,
+   "cumulative_count": 24048,
+   "cumulative_text_count": 24011,
+   "cumulative_sized_count": 1799,
+   "cumulative_iast_bytes_total": 1151236947
+  },
+  {
+   "date": "2020-01-01",
+   "added": 341,
+   "cumulative_count": 24389,
+   "cumulative_text_count": 24352,
+   "cumulative_sized_count": 1812,
+   "cumulative_iast_bytes_total": 1153522029
+  },
+  {
+   "date": "2020-02-01",
+   "added": 207,
+   "cumulative_count": 24596,
+   "cumulative_text_count": 24559,
+   "cumulative_sized_count": 1822,
+   "cumulative_iast_bytes_total": 1158618461
+  },
+  {
+   "date": "2020-03-01",
+   "added": 116,
+   "cumulative_count": 24712,
+   "cumulative_text_count": 24675,
+   "cumulative_sized_count": 1859,
+   "cumulative_iast_bytes_total": 1166751351
+  },
+  {
+   "date": "2020-04-01",
+   "added": 188,
+   "cumulative_count": 24900,
+   "cumulative_text_count": 24863,
+   "cumulative_sized_count": 1881,
+   "cumulative_iast_bytes_total": 1186795284
+  },
+  {
+   "date": "2020-05-01",
+   "added": 76,
+   "cumulative_count": 24976,
+   "cumulative_text_count": 24938,
+   "cumulative_sized_count": 1889,
+   "cumulative_iast_bytes_total": 1190219395
+  },
+  {
+   "date": "2020-06-01",
+   "added": 134,
+   "cumulative_count": 25110,
+   "cumulative_text_count": 24961,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2020-07-01",
+   "added": 102,
+   "cumulative_count": 25212,
+   "cumulative_text_count": 24961,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2020-08-01",
+   "added": 20,
+   "cumulative_count": 25232,
+   "cumulative_text_count": 24961,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2020-09-01",
+   "added": 54,
+   "cumulative_count": 25286,
+   "cumulative_text_count": 24961,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2020-10-01",
+   "added": 304,
+   "cumulative_count": 25590,
+   "cumulative_text_count": 24961,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2020-11-01",
+   "added": 140,
+   "cumulative_count": 25730,
+   "cumulative_text_count": 24962,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2020-12-01",
+   "added": 287,
+   "cumulative_count": 26017,
+   "cumulative_text_count": 24970,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2021-01-01",
+   "added": 298,
+   "cumulative_count": 26315,
+   "cumulative_text_count": 24971,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2021-02-01",
+   "added": 137,
+   "cumulative_count": 26452,
+   "cumulative_text_count": 24971,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2021-03-01",
+   "added": 345,
+   "cumulative_count": 26797,
+   "cumulative_text_count": 24971,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2021-04-01",
+   "added": 402,
+   "cumulative_count": 27199,
+   "cumulative_text_count": 24971,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2021-05-01",
+   "added": 291,
+   "cumulative_count": 27490,
+   "cumulative_text_count": 24971,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2021-06-01",
+   "added": 145,
+   "cumulative_count": 27635,
+   "cumulative_text_count": 24971,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2021-07-01",
+   "added": 107,
+   "cumulative_count": 27742,
+   "cumulative_text_count": 24971,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2021-08-01",
+   "added": 123,
+   "cumulative_count": 27865,
+   "cumulative_text_count": 24971,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2021-09-01",
+   "added": 170,
+   "cumulative_count": 28035,
+   "cumulative_text_count": 24971,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2021-10-01",
+   "added": 216,
+   "cumulative_count": 28251,
+   "cumulative_text_count": 24971,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2021-11-01",
+   "added": 239,
+   "cumulative_count": 28490,
+   "cumulative_text_count": 24971,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2021-12-01",
+   "added": 128,
+   "cumulative_count": 28618,
+   "cumulative_text_count": 24971,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2022-01-01",
+   "added": 104,
+   "cumulative_count": 28722,
+   "cumulative_text_count": 24971,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2022-02-01",
+   "added": 104,
+   "cumulative_count": 28826,
+   "cumulative_text_count": 24974,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2022-03-01",
+   "added": 99,
+   "cumulative_count": 28925,
+   "cumulative_text_count": 24974,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2022-04-01",
+   "added": 173,
+   "cumulative_count": 29098,
+   "cumulative_text_count": 24974,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2022-05-01",
+   "added": 151,
+   "cumulative_count": 29249,
+   "cumulative_text_count": 24974,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2022-06-01",
+   "added": 96,
+   "cumulative_count": 29345,
+   "cumulative_text_count": 24974,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2022-07-01",
+   "added": 284,
+   "cumulative_count": 29629,
+   "cumulative_text_count": 24974,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2022-08-01",
+   "added": 245,
+   "cumulative_count": 29874,
+   "cumulative_text_count": 24974,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2022-09-01",
+   "added": 163,
+   "cumulative_count": 30037,
+   "cumulative_text_count": 24974,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2022-10-01",
+   "added": 139,
+   "cumulative_count": 30176,
+   "cumulative_text_count": 24974,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2022-11-01",
+   "added": 433,
+   "cumulative_count": 30609,
+   "cumulative_text_count": 24974,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2022-12-01",
+   "added": 551,
+   "cumulative_count": 31160,
+   "cumulative_text_count": 24974,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2023-01-01",
+   "added": 170,
+   "cumulative_count": 31330,
+   "cumulative_text_count": 24974,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2023-02-01",
+   "added": 211,
+   "cumulative_count": 31541,
+   "cumulative_text_count": 24974,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2023-03-01",
+   "added": 428,
+   "cumulative_count": 31969,
+   "cumulative_text_count": 24974,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2023-04-01",
+   "added": 207,
+   "cumulative_count": 32176,
+   "cumulative_text_count": 24974,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2023-05-01",
+   "added": 171,
+   "cumulative_count": 32347,
+   "cumulative_text_count": 24974,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2023-06-01",
+   "added": 427,
+   "cumulative_count": 32774,
+   "cumulative_text_count": 24974,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2023-07-01",
+   "added": 195,
+   "cumulative_count": 32969,
+   "cumulative_text_count": 24976,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2023-08-01",
+   "added": 210,
+   "cumulative_count": 33179,
+   "cumulative_text_count": 24976,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2023-09-01",
+   "added": 90,
+   "cumulative_count": 33269,
+   "cumulative_text_count": 24977,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2023-10-01",
+   "added": 203,
+   "cumulative_count": 33472,
+   "cumulative_text_count": 24977,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2023-11-01",
+   "added": 143,
+   "cumulative_count": 33615,
+   "cumulative_text_count": 24977,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2023-12-01",
+   "added": 161,
+   "cumulative_count": 33776,
+   "cumulative_text_count": 24977,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2024-01-01",
+   "added": 114,
+   "cumulative_count": 33890,
+   "cumulative_text_count": 24977,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2024-02-01",
+   "added": 210,
+   "cumulative_count": 34100,
+   "cumulative_text_count": 24977,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2024-03-01",
+   "added": 275,
+   "cumulative_count": 34375,
+   "cumulative_text_count": 24977,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2024-04-01",
+   "added": 76,
+   "cumulative_count": 34451,
+   "cumulative_text_count": 24977,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2024-05-01",
+   "added": 214,
+   "cumulative_count": 34665,
+   "cumulative_text_count": 24977,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2024-06-01",
+   "added": 253,
+   "cumulative_count": 34918,
+   "cumulative_text_count": 24977,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2024-07-01",
+   "added": 138,
+   "cumulative_count": 35056,
+   "cumulative_text_count": 24977,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2024-08-01",
+   "added": 79,
+   "cumulative_count": 35135,
+   "cumulative_text_count": 24977,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2024-09-01",
+   "added": 59,
+   "cumulative_count": 35194,
+   "cumulative_text_count": 24977,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2024-10-01",
+   "added": 173,
+   "cumulative_count": 35367,
+   "cumulative_text_count": 24977,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2024-11-01",
+   "added": 83,
+   "cumulative_count": 35450,
+   "cumulative_text_count": 24977,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2024-12-01",
+   "added": 63,
+   "cumulative_count": 35513,
+   "cumulative_text_count": 24977,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2025-01-01",
+   "added": 197,
+   "cumulative_count": 35710,
+   "cumulative_text_count": 24977,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2025-02-01",
+   "added": 116,
+   "cumulative_count": 35826,
+   "cumulative_text_count": 24977,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2025-03-01",
+   "added": 143,
+   "cumulative_count": 35969,
+   "cumulative_text_count": 24977,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2025-04-01",
+   "added": 286,
+   "cumulative_count": 36255,
+   "cumulative_text_count": 24977,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2025-05-01",
+   "added": 134,
+   "cumulative_count": 36389,
+   "cumulative_text_count": 24977,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2025-06-01",
+   "added": 98,
+   "cumulative_count": 36487,
+   "cumulative_text_count": 24980,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2025-07-01",
+   "added": 244,
+   "cumulative_count": 36731,
+   "cumulative_text_count": 24980,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2025-08-01",
+   "added": 332,
+   "cumulative_count": 37063,
+   "cumulative_text_count": 24980,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2025-09-01",
+   "added": 154,
+   "cumulative_count": 37217,
+   "cumulative_text_count": 24980,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2025-10-01",
+   "added": 174,
+   "cumulative_count": 37391,
+   "cumulative_text_count": 24980,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2025-11-01",
+   "added": 266,
+   "cumulative_count": 37657,
+   "cumulative_text_count": 24980,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2025-12-01",
+   "added": 217,
+   "cumulative_count": 37874,
+   "cumulative_text_count": 24980,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2026-01-01",
+   "added": 189,
+   "cumulative_count": 38063,
+   "cumulative_text_count": 24981,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2026-02-01",
+   "added": 130,
+   "cumulative_count": 38193,
+   "cumulative_text_count": 24981,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2026-03-01",
+   "added": 159,
+   "cumulative_count": 38352,
+   "cumulative_text_count": 24981,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2026-04-01",
+   "added": 203,
+   "cumulative_count": 38555,
+   "cumulative_text_count": 24981,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2026-05-01",
+   "added": 435,
+   "cumulative_count": 38990,
+   "cumulative_text_count": 24981,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2026-06-01",
+   "added": 197,
+   "cumulative_count": 39187,
+   "cumulative_text_count": 24981,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2026-07-01",
+   "added": 92,
+   "cumulative_count": 39279,
+   "cumulative_text_count": 24981,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2026-08-01",
+   "added": 158,
+   "cumulative_count": 39437,
+   "cumulative_text_count": 24981,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2026-09-01",
+   "added": 117,
+   "cumulative_count": 39554,
+   "cumulative_text_count": 24981,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  },
+  {
+   "date": "2026-10-01",
+   "added": 28,
+   "cumulative_count": 39582,
+   "cumulative_text_count": 24981,
+   "cumulative_sized_count": 1892,
+   "cumulative_iast_bytes_total": 1191919626
+  }
+ ],
+ "undated_works": 2005,
+ "note": "cumulative_text_count counts items with a Jain Quantum booktext and flattens after 2022, when Quantum's index stopped; cumulative_iast_bytes_total covers only the items fetched and measured so far and is a floor."
+}
