@@ -554,7 +554,7 @@ function renderWorkLi(work) {
   if (work.pdf) {
     badges.appendChild(el("span", {
       class: "badge",
-      title: "A scanned PDF exists on jainelibrary.org (download requires an account there)",
+      title: "A PDF exists on jainelibrary.org (download requires an account there)",
     }, "PDF"));
   }
   if (work.ocr_docx) {

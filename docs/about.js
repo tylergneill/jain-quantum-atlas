@@ -250,7 +250,7 @@ function renderAudit(tree) {
   const perYear = countBy(works.filter(inQuantum), (w) => (w.added || "").slice(0, 4) || "undated");
   list.append(auditItem(
     `Catalogued on Jain Quantum without a text (${nf.format(dark.length)} items)`,
-    "Listed in Quantum's catalog, with a scan in the library, but no text to read or search. " +
+    "Listed in Quantum's catalog, with a PDF in the library, but no text to read or search. " +
     "By year the item went online, against all of that year's Sanskrit items on Quantum.",
     darkYears.map(([y, n]) => `${y} — ${nf.format(n)} of ${nf.format(perYear.get(y))}`)));
 }
@@ -264,15 +264,15 @@ function renderAudit(tree) {
 // this file fills the silent months in (so the x axis is time, not "months
 // with news") and takes differences for the per-period view.
 //
-// Two bands, because the mix is the story: every item has a scan, and from
+// Two bands, because the mix is the story: every item has a PDF, and from
 // mid-2020 no new one has a text.
 
 const BANDS = [
   { key: "text", label: "public text", cls: "gb-text" },
-  { key: "none", label: "scan only", cls: "gb-pdf" },
+  { key: "none", label: "PDF only", cls: "gb-pdf" },
 ];
 
-// Which bands the stack draws. A scan carries no text, so in `size` the
+// Which bands the stack draws. A PDF carries no text, so in `size` the
 // second band is structurally zero and is dropped along with its legend key.
 function activeBands() {
   return growthState.metric === "size" ? BANDS.filter((b) => b.key === "text") : BANDS;
