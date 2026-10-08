@@ -135,6 +135,11 @@ on 429/5xx, resumable cache. Nothing here logs in to jainelibrary.org.
 
 ## Seeding-day loose ends
 
+- [ ] **`__content_version__` is the newest accession, not the fetch date.**
+      Stamp it from the fetch journals, as the siblings do; needs a machine
+      with `data/`. Steps and the journal's shape in
+      [content-version.md](content-version.md).
+
 - [x] Pull the five item endpoints (done 2026-10-07; cache under `data/`).
 - [ ] Dedupe check: 2 books ids were never seen across the 44 pages; refetch
       with a stable `ordering=` parameter if DRF exposes one (`?ordering=id`
