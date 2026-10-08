@@ -38,14 +38,18 @@ on 429/5xx, resumable cache. Nothing here logs in to jainelibrary.org.
       extra are the Āgama shelf, audio and JAINA material; the API's 8,539
       extra are almost entirely 2023–2026 accessions. Quantum is a snapshot
       ending in 2022.
-- [ ] **Decide the universe in light of that.** Options: (a) the Atlas is
-      the Quantum snapshot, with text, and says the library has grown ~8.5k
-      items since; (b) the Atlas is the API's live catalogue, with text for
-      the pre-2023 part only, and `text_count` < `count` as in
-      E-bhāratīsampat's PDF-only works. (b) matches the sibling pattern and
-      keeps the growth chart honest. Either way `web_date` is the changelog
-      axis and the API pull must be repeated periodically — the only
-      recurring fetch this Atlas would have.
+- [ ] **Decide the universe in light of that.** `build_tree` provisionally
+      takes option (b), widened to the UNION of both catalogues on `srno`
+      (41,587 works; `text_count` 26,792 = items with a Quantum text; the
+      2,005 Quantum-only rows carry no date). Confirm or narrow. Either way
+      `web_date` is the changelog axis and the API pull must be repeated
+      periodically — the only recurring fetch this Atlas would have, and it
+      still needs a rivulet fetcher (see Phase 1).
+- [ ] **tree.json is 20.5 MB** (41.6k works with full metadata). The sibling
+      rule is "ship nothing derivable": drop `sources` where it is both,
+      `classification` strings, and `title_native` when it only transliterates
+      the title; consider leaving the API-only items out of the published
+      tree and counting them in `all_stats` alone.
 - [ ] **Language grouping must be era-proof.** The `language` string's
       convention shifted around 2023 (plain `Sanskrit` → `Sanskrit, Hindi`).
       Publish any-Sanskrit as the headline Sanskrit figure; keep
