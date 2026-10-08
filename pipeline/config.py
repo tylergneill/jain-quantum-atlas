@@ -31,5 +31,6 @@ API_CACHE_DIR = DATA_DIR / "metadata_cache" / "jainelibrary"
 FULLTEXT_CACHE_DIR = DATA_DIR / "fulltext_cache"    # what the site served
 TEXT_EXTRACT_DIR = DATA_DIR / "text_extract"        # clean text derived from it
 TEXT_LOG_PATH = DATA_DIR / "text_fetch_log.jsonl"
+SIZES_PATH = DATA_DIR / "sizes.jsonl"               # make count-sizes
 
 TREE_PATH = DOCS_DATA_DIR / "tree.json"

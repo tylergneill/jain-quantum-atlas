@@ -21,6 +21,14 @@ seeding day — re-derive, don't quote.
 | `make fetch-catalog` | **NETWORKED. NEEDS `rivulet`.** 34 catalog pages → `data/metadata_cache/jainqq/` |
 | `make parse-catalog` | cached pages → `data/catalogue.jsonl` + the language-slice table (no network) |
 | `make fetch-text` | **NETWORKED. NEEDS `rivulet`.** One booktext JSON per item with text → `data/fulltext_cache/<srno>.json`. `ARGS="--languages <selector>"`, default `sanskrit-only`; resumable |
+| `make extract-text` | **NEEDS `rivulet`** (exits 2 without it; nothing else does). Cache → `data/text_extract/<srno>.txt`, furniture removed, pages separated by form feeds. Seconds |
+| `make count-sizes` | cache → `data/sizes.jsonl`: raw / content / IAST bytes, pages, script breakdown per item. Pure function of the cache, no rivulet. ~15 min single-threaded for the Sanskrit-only slice; `WORKERS=n` |
+
+**Every rule about the text lives in `pipeline/text_measure.py`** — the page
+splitter, the furniture patterns (the digitising libraries' OCR'd stamps,
+page numbers, the `________________` marker), the script counters. rivulet's
+extractor imports them and only writes files, so `count-sizes` measures
+exactly what `extract-text` would write, with or without rivulet installed.
 
 The selectors (`all`, `sanskrit-only`, `any-sanskrit`, `any-prakrit`,
 `sanskrit-or-prakrit`) and the has-text rule are defined once, in
@@ -121,7 +129,8 @@ changelog, the audit, serving.
     data/metadata_cache/jainqq/         Quantum catalog pages, catalog_pNNNN.json
     data/catalogue.jsonl                one row per distinct srno (make parse-catalog)
     data/fulltext_cache/<srno>.json     the booktext data route's JSON, as served
-    data/text_extract/                  clean plain text derived from it (not yet)
+    data/text_extract/<srno>.txt        clean text, pages separated by \f (make extract-text)
+    data/sizes.jsonl                    per-item bytes and script counts (make count-sizes)
     data/text_fetch_log.jsonl           every text fetch: bytes, chars, pages, errors
     data/clearance.json, clearance_profile/   the Cloudflare cookie and the Chrome profile that earned it
 

@@ -74,12 +74,16 @@ on 429/5xx, resumable cache. Nothing here logs in to jainelibrary.org.
       `http`/`pacing`/`cache`/`journal` machinery, with a `pipeline/fetch.py`
       shim here that exits 2 without rivulet. Dedupe on `id` (ordering is not
       stable across pages — see `site-structure.md`).
-- [ ] **`extract-text`**: `fulltext_cache/<srno>.json` → `text_extract/`.
-      Decode the JSON, split on the `Page #n` anchors and dashed rules, strip
-      the "Jain Education International … For Private and Personal Use Only"
-      boilerplate and the `________________` page markers, keep page
-      boundaries. Belongs in rivulet (`extract/jainquantum/text_extractor.py`)
-      with a `pipeline/fulltext.py` shim here, like the siblings.
+- [x] **`extract-text`** (2026-10-07): rules in `pipeline/text_measure.py`,
+      writer in `rivulet/extract/jainquantum/text_extractor.py`, shim in
+      `pipeline/fulltext.py`. 1,961 items written in 18 s, 13 empty. Pages
+      separated by form feeds; the script as served (IAST on request). The
+      furniture patterns are conservative — cover-page OCR noise stays, and
+      only whole-line library stamps and bare page numbers go.
+- [ ] **Furniture audit.** Sample 50 extracted texts and list the recurring
+      non-content lines the patterns miss (running headers, the
+      "Shri Mahavir Jain Aradhana Kendra" variants OCR'd with Devanāgarī
+      noise, which the Indic-character guard currently keeps).
 - [x] **Test the has-text rule.** Broken within the first 600 fetches: serials
       007833–007843 (one batch of 11) have a size and page count but empty
       text. Recorded in `site-structure.md`. Consequence for phase 2: an
@@ -96,10 +100,10 @@ on 429/5xx, resumable cache. Nothing here logs in to jainelibrary.org.
       sums are approximate), `web_date`, `language` into a list.
 - [ ] Category normalisation in the pipeline: fold classification typos,
       split comma-joined slugs, keep the per-Āgama slugs as the fine axis.
-- [ ] `count_sizes` over `text_extract/` — raw / content / IAST bytes, so the
-      figure Sāgarasaṅgama reads (`transliterated_bytes`) exists. Measure the
-      Devanāgarī vs Gujarati vs Latin share per item; it is the only way to get
-      a real Sanskrit size out of mixed-language books.
+- [x] `count_sizes` over the cache (2026-10-07) — raw / content / IAST bytes
+      plus Devanāgarī, Gujarati and Latin counts per item, in
+      `data/sizes.jsonl`. Figures in `recon/figures-2026-10-07.md` once the
+      first run completes.
 - [ ] `build_tree` → `docs/data/tree.json` with `all_stats` — at least
       `count`, `text_count`, `pdf_count`, `sized`, `transliterated_bytes`,
       `last_changed` — in the shape `collect_atlas_counts.py` reads.

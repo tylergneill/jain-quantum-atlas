@@ -1,4 +1,4 @@
-.PHONY: clearance fetch-catalog parse-catalog fetch-text
+.PHONY: clearance fetch-catalog parse-catalog fetch-text extract-text count-sizes
 
 # ============================================================================
 # Acquisition. NETWORKED; needs the private `rivulet` package (exit 2 without
@@ -36,3 +36,25 @@ parse-catalog:
 #   make fetch-text ARGS="--languages any-sanskrit"
 fetch-text:
 	python -m pipeline.fetch_text $(ARGS)
+
+# ============================================================================
+# Offline, from the cache.
+# ============================================================================
+
+# data/fulltext_cache/ -> data/text_extract/<srno>.txt, furniture removed,
+# pages separated by form feeds. NEEDS rivulet (exits 2 without it); the
+# rules it applies live here in pipeline/text_measure.py.
+#   make extract-text
+#   make extract-text ARGS="--transliterate"
+extract-text:
+	python -m pipeline.extract_text $(ARGS)
+
+# data/fulltext_cache/ -> data/sizes.jsonl: raw / content / IAST bytes per
+# item plus the script breakdown. Pure function of the cache; no rivulet.
+# Transliteration dominates: ~15 min single-threaded for the Sanskrit-only
+# slice, less with workers.
+#   make count-sizes
+#   make count-sizes WORKERS=4
+WORKERS ?=
+count-sizes:
+	python -m pipeline.count_sizes $(if $(WORKERS),--workers $(WORKERS)) $(ARGS)
