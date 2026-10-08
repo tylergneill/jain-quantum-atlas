@@ -1,0 +1,133 @@
+# jain-quantum-atlas
+
+A browsable atlas over the **Jain eLibrary** collection as served by
+**jainqq.org** ("Jain Quantum"), one of the `sagara-sangama` atlases. A
+`pipeline/` will emit `docs/data/tree.json`; a single-page frontend in `docs/`
+will browse it.
+
+This repo **hosts no text of its own.** It indexes metadata and structure and
+links out to jainqq.org and jainelibrary.org.
+
+**Seeded 2026-10-07; acquisition works, nothing downstream exists yet.** Read
+`notes/scratch/todo.md` before building anything, and `notes/site-structure.md`
+before touching either site. The figures in `notes/recon/` are from the
+seeding day — re-derive, don't quote.
+
+## Commands
+
+| Command | Does |
+|---|---|
+| `make clearance` | **NETWORKED. NEEDS `rivulet`** (exits 2 without it). Cloudflare clearance for jainqq.org → `data/clearance.json`. Opens a separate Chrome; leave it visible |
+| `make fetch-catalog` | **NETWORKED. NEEDS `rivulet`.** 34 catalog pages → `data/metadata_cache/jainqq/` |
+| `make parse-catalog` | cached pages → `data/catalogue.jsonl` + the language-slice table (no network) |
+| `make fetch-text` | **NETWORKED. NEEDS `rivulet`.** One booktext JSON per item with text → `data/fulltext_cache/<srno>.json`. `ARGS="--languages <selector>"`, default `sanskrit-only`; resumable |
+
+The selectors (`all`, `sanskrit-only`, `any-sanskrit`, `any-prakrit`,
+`sanskrit-or-prakrit`) and the has-text rule are defined once, in
+`pipeline/parse_catalog.py`, which rivulet imports — so the fetch queue and
+any count this Atlas publishes about a slice come from the same definition.
+
+Run the networked targets from an environment with rivulet installed
+(`~/venvs/sagara-sangama-311` on the seeding machine).
+
+## `notes/` — structure, research, and tasks in flight
+
+**The shape is the same in all five repos:**
+
+    notes/*.md        non-trivial notes on structure -- why it is built this
+                      way, what will bite you. NOT a record of how a decision
+                      was reached or what the state of play was on some date.
+    notes/<topic>/    folders of research material: samples, one-off analysis
+                      scripts, measurements kept so a figure can be re-derived
+                      rather than re-guessed. Each carries its own README.
+    notes/scratch/    tasks in flight -- plans, scoped designs, measurements
+                      under way, and the backlog itself.
+
+**The lifecycle.** A new task is written into `scratch/`. When it finishes, any
+insight worth keeping is **promoted** into a top-level note (or into a code
+comment beside the thing it explains) and **the scratch file is deleted**.
+Nothing is kept because it was expensive to write.
+
+### When asked what's left
+
+On "what do the notes say we need to work on" (or any variant), **read the
+notes and answer from them.** `notes/scratch/todo.md` is the spine — every open
+`- [ ]` item. Top-level notes are reference, not backlog.
+
+### Two cautions
+
+- **Don't cite a notes figure as fact — re-derive it.** Both sites change under
+  us; the cache under `data/` is the only thing a figure can be checked against,
+  and it is dated by its fetch.
+- **Don't promote note prose into README or UI copy** without re-checking it.
+
+## Two sources, one catalogue
+
+jainelibrary.org and jainqq.org ("Jain Quantum") are the same organisation's
+two faces over one catalogue, keyed by the same six-digit **`sr_no`**. They are
+gated differently and carry different things, so the Atlas reads both:
+
+| | jainelibrary.org | jainqq.org |
+| --- | --- | --- |
+| what it is | React SPA over an open Django REST API at `/api/` | Next.js full-text search engine |
+| gate | metadata open; **file downloads need an account**; robots.txt disallows all | **Cloudflare managed challenge** on every HTML/JSON route; a real browser session passes |
+| per-item metadata | rich: per-file `file_size` strings, `pages`, `classification`, `categories[]`, `language`, `script`, authors, publisher, year | thinner: `file_size`, `num_pages`, `classification` (comma list), `master_folder` |
+| plaintext | "OCR docx" / "TOC docx" download entries — behind login | `/booktext/<Title>/<srno>` serves the **full OCR text**, page-delimited, no login |
+
+**The division of labour is fixed by the gates.** Metadata comes from the
+API (no login, no challenge, 500 per page). Text comes from Quantum's booktext
+pages, which need a browser-earned clearance cookie but no account. Nothing
+here should ever log in to jainelibrary.org.
+
+**Items that have text are the items with a non-blank `file_size` in the
+Quantum catalog** — a 22-item sample found the rule exact in both directions.
+Treat it as a hypothesis the fetcher confirms, and record the first exception
+in `site-structure.md`.
+
+## Language is a string, not the array
+
+The API's `languages[]` array folds the *script* in: a Sanskrit-only book
+lists `Hindi` too because it is printed in Devanāgarī. The `language` string
+(`"Sanskrit"`, `"Sanskrit, Hindi"`, …) is the honest field, and the `script`
+field is separate. Group by the string; never by the array.
+
+`classification` is mostly script too (`Book_Devnagari`, `Book_Gujarati`,
+`Book_English`), with a long tail of typos (`Book_Englsih`, `Book_Guajrati`).
+The 634 `categories[].slug` values are the finer axis, including per-Āgama
+slugs, but ~5% of items carry two or more and some slugs are themselves
+comma-joined pairs (`philosophy,-religion`). Normalise in the pipeline, as the
+sibling Atlas does for its free-text `Category`; never in the frontend.
+
+## Acquisition lives in rivulet
+
+**No code that crosses the network belongs here.** Fetchers, the Cloudflare
+clearance, and any liveness check go in `rivulet/extract/jainelibrary/` and
+`rivulet/verify/jainelibrary/`, reached through a guarded `pipeline/fetch.py`
+shim that exits 2 when the package is absent. The recon pull script is parked
+at `rivulet/notes/scratch/jain-elibrary-metadata-pull.py` until that package
+exists.
+
+Terms, shared with the other Atlases and stated in rivulet's own `CLAUDE.md`:
+single-threaded; start-to-start pacing, default 2s; stop rather than retry on
+429/5xx; a contact-bearing User-Agent; cache written `.part` + rename;
+resumable from the cache alone.
+
+What stays here: parsing the caches, byte counting, `build_tree`, the
+changelog, the audit, serving.
+
+## Where things land
+
+    data/metadata_cache/jainelibrary/   API pages, <endpoint>_pNNNN.json (recon pull, 2026-10-07)
+    data/metadata_cache/jainqq/         Quantum catalog pages, catalog_pNNNN.json
+    data/catalogue.jsonl                one row per distinct srno (make parse-catalog)
+    data/fulltext_cache/<srno>.json     the booktext data route's JSON, as served
+    data/text_extract/                  clean plain text derived from it (not yet)
+    data/text_fetch_log.jsonl           every text fetch: bytes, chars, pages, errors
+    data/clearance.json, clearance_profile/   the Cloudflare cookie and the Chrome profile that earned it
+
+The same two text directories every Atlas uses. `data/` is gitignored.
+
+**The fulltext cache is JSON with escaped Unicode**, so a file is ~2.5× the
+text's character count in bytes (a 2.1 M-character book is 5.4 MB). It is
+kept as served; `text_extract/` is where the decoded, de-furnitured text
+goes, and byte counts belong to that stage, not to the cache.

@@ -1,0 +1,380 @@
+{
+ "ep": "manuscripts",
+ "n": 977,
+ "count": 977,
+ "classification": [
+  [
+   "Manuscript",
+   970
+  ],
+  [
+   "Manuscript, Ritual_text",
+   7
+  ]
+ ],
+ "categories": [
+  [
+   "manuscript",
+   970
+  ],
+  [
+   "agam_aavashyak",
+   31
+  ],
+  [
+   "agam_uttaradhyayan",
+   27
+  ],
+  [
+   "agam_kalpsutra",
+   25
+  ],
+  [
+   "agam_sutrakritang",
+   13
+  ],
+  [
+   "agam_acharang",
+   12
+  ],
+  [
+   "agam_dashvaikalik",
+   11
+  ],
+  [
+   "agam_bhagwati",
+   10
+  ],
+  [
+   "agam_anuyogdwar",
+   8
+  ],
+  [
+   "manuscript,-ritual_text",
+   7
+  ],
+  [
+   "agam_oghniryukti",
+   7
+  ],
+  [
+   "agam_sthanang",
+   7
+  ],
+  [
+   "agam_index",
+   6
+  ],
+  [
+   "ritual,-vidhi",
+   6
+  ],
+  [
+   "agam_pragyapana",
+   6
+  ],
+  [
+   "conduct",
+   5
+  ],
+  [
+   "paryushan",
+   5
+  ],
+  [
+   "agam_anykaalin",
+   5
+  ],
+  [
+   "agam_nandisutra",
+   5
+  ],
+  [
+   "agam_prashnavyakaran",
+   5
+  ],
+  [
+   "agam_upasakdasha",
+   5
+  ],
+  [
+   "agam_gyatadharmkatha",
+   4
+  ],
+  [
+   "agam_samvayang",
+   4
+  ],
+  [
+   "agam_anuttaropapatikdasha",
+   3
+  ],
+  [
+   "agam_aupapatik",
+   3
+  ],
+  [
+   "agam_gacchachar",
+   3
+  ],
+  [
+   "agam_vipakshrut",
+   3
+  ],
+  [
+   "yoga,-sermon",
+   3
+  ],
+  [
+   "vidhi,-devdravya,-ritual",
+   2
+  ],
+  [
+   "agam_antkrutdasha",
+   2
+  ],
+  [
+   "agam_jambudwipapragnapti",
+   2
+  ],
+  [
+   "agam,-canon",
+   2
+  ],
+  [
+   "agam_nirayavalika",
+   2
+  ],
+  [
+   "agam_pindniryukti",
+   2
+  ],
+  [
+   "story",
+   2
+  ],
+  [
+   "agam_rajprashniya",
+   2
+  ],
+  [
+   "biography,-story",
+   2
+  ],
+  [
+   "agam_vyavahara",
+   2
+  ],
+  [
+   "spiritual,-religion,-philosophy",
+   1
+  ],
+  [
+   "agam_related_other_literature",
+   1
+  ],
+  [
+   "tithi,-devdravya,-history",
+   1
+  ],
+  [
+   "agam_aaturpratyakhyan",
+   1
+  ],
+  [
+   "agam_chandrapragnapti",
+   1
+  ],
+  [
+   "ethics,-principle",
+   1
+  ],
+  [
+   "canon,-ethics",
+   1
+  ],
+  [
+   "agam_ganividya",
+   1
+  ],
+  [
+   "agam_jivajivabhigam",
+   1
+  ],
+  [
+   "canon,-literature",
+   1
+  ],
+  [
+   "literature,-art",
+   1
+  ],
+  [
+   "agam_panchakalpa_bhashya",
+   1
+  ],
+  [
+   "agam_chatusharan,-agam_aaturpratyakhyan,-agam_mahapratyakhyan,-agam_bhaktaparigna,-agam_tandulvaicharik,-agam_sanstarak,-agam_gacchachar,-agam_chandravedhyak,-agam_ganividya,-agam_devendrastava,-agam_maransamadhi",
+   1
+  ],
+  [
+   "agam_suryapragnapti",
+   1
+  ],
+  [
+   "agam_tandulvaicharik",
+   1
+  ],
+  [
+   "tattvartha-sutra",
+   1
+  ],
+  [
+   "tattvarth",
+   1
+  ],
+  [
+   "tithi,-jyotish,-principle",
+   1
+  ]
+ ],
+ "file_types": [
+  [
+   "TOC pdf",
+   977
+  ],
+  [
+   "Standard PDF",
+   977
+  ],
+  [
+   "HR pdf",
+   973
+  ],
+  [
+   "TOC docx",
+   938
+  ],
+  [
+   "OCR docx",
+   668
+  ]
+ ],
+ "items_with": [
+  [
+   "TOC pdf",
+   977
+  ],
+  [
+   "Standard PDF",
+   977
+  ],
+  [
+   "HR pdf",
+   973
+  ],
+  [
+   "TOC docx",
+   938
+  ],
+  [
+   "OCR docx",
+   668
+  ]
+ ],
+ "bytes_by_type": {
+  "TOC docx": 142613000.0,
+  "TOC pdf": 219584000.0,
+  "Standard PDF": 17777000000.0,
+  "HR pdf": 23280000000.0,
+  "OCR docx": 189028000.0
+ },
+ "master_folder": [
+  [
+   "manuscript",
+   977
+  ]
+ ],
+ "language": [
+  [
+   "Sanskrit",
+   595
+  ],
+  [
+   "Sanskrit, Hindi",
+   279
+  ],
+  [
+   "Prakrit",
+   39
+  ],
+  [
+   "Gujarati",
+   30
+  ],
+  [
+   "Hindi",
+   10
+  ],
+  [
+   "Sanskrit, Gujarati",
+   6
+  ],
+  [
+   "Prakrit, Marugurjar",
+   4
+  ],
+  [
+   "Sanskrit, Gujarati, Hindi",
+   4
+  ],
+  [
+   "Sanskrit, Hindi, Gujarati",
+   2
+  ],
+  [
+   "Prakrit, Sanskrit",
+   2
+  ],
+  [
+   "Marugurjar",
+   1
+  ],
+  [
+   "Gujarati, Sanskrit",
+   1
+  ],
+  [
+   "Devnagri",
+   1
+  ],
+  [
+   "English",
+   1
+  ],
+  [
+   "Devnagri, Gujarati",
+   1
+  ],
+  [
+   "Marathi",
+   1
+  ]
+ ],
+ "script": [
+  [
+   "Hindi",
+   946
+  ],
+  [
+   "Gujarati",
+   30
+  ],
+  [
+   "English",
+   1
+  ]
+ ],
+ "pages_sum": 286883.0,
+ "pages_n": 977
+}

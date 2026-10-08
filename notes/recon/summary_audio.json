@@ -1,0 +1,132 @@
+{
+ "ep": "audio",
+ "n": 1180,
+ "count": 1180,
+ "classification": [
+  [
+   "Audio_File",
+   1180
+  ]
+ ],
+ "categories": [
+  [
+   "audio_file",
+   1180
+  ],
+  [
+   "shrimad_rajchandra_vachanamrut",
+   1103
+  ],
+  [
+   "osho_rajnish_mahavir_meri_drishti_me_mp3_and_pdf_files",
+   25
+  ],
+  [
+   "shrimad_rajchandra_vachanamrut_zip_files",
+   14
+  ],
+  [
+   "jain_yoga_and_meditation_mp3",
+   8
+  ],
+  [
+   "osho_rajnish_mahavir_ya_mahavinash_mp3_and_pdf_files",
+   8
+  ],
+  [
+   "bruhad_alochana_mp3",
+   4
+  ],
+  [
+   "samay_sara_mp3",
+   4
+  ],
+  [
+   "pratikraman_sthanakvasi",
+   1
+  ],
+  [
+   "paryushan",
+   1
+  ]
+ ],
+ "file_types": [
+  [
+   "MP3",
+   1166
+  ],
+  [
+   "HR pdf",
+   1140
+  ],
+  [
+   "TOC pdf",
+   1107
+  ],
+  [
+   "DOCX",
+   1103
+  ],
+  [
+   "ZIP",
+   14
+  ]
+ ],
+ "items_with": [
+  [
+   "MP3",
+   1166
+  ],
+  [
+   "HR pdf",
+   1140
+  ],
+  [
+   "TOC pdf",
+   1107
+  ],
+  [
+   "DOCX",
+   1103
+  ],
+  [
+   "ZIP",
+   14
+  ]
+ ],
+ "bytes_by_type": {
+  "TOC pdf": 551900000.0,
+  "MP3": 8525354000.0,
+  "HR pdf": 1687500000.0,
+  "DOCX": 110300000.0,
+  "ZIP": 3772000000.0
+ },
+ "master_folder": [
+  [
+   "audio_file",
+   1180
+  ]
+ ],
+ "language": [
+  [
+   "Gujarati",
+   1143
+  ],
+  [
+   "Hindi",
+   37
+  ]
+ ],
+ "script": [
+  [
+   "Gujarati",
+   1143
+  ],
+  [
+   "Hindi",
+   37
+  ]
+ ],
+ "pages_sum": 1180.0,
+ "pages_n": 1180
+}
