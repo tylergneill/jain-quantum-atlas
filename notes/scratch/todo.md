@@ -135,10 +135,10 @@ on 429/5xx, resumable cache. Nothing here logs in to jainelibrary.org.
 
 ## Seeding-day loose ends
 
-- [ ] **`__content_version__` is the newest accession, not the fetch date.**
-      Stamp it from the fetch journals, as the siblings do; needs a machine
-      with `data/`. Steps and the journal's shape in
-      [content-version.md](content-version.md).
+- [x] **`__content_version__` is the newest accession, not the fetch date.**
+      Done 2026-10-08: `stamp_version` takes the newest `fetched_at` across
+      the catalog and booktext journals, and writes the same date into
+      `all_stats.sourced`; the About line reads "data last sourced" again.
 
 - [x] Pull the five item endpoints (done 2026-10-07; cache under `data/`).
 - [ ] Dedupe check: 2 books ids were never seen across the 44 pages; refetch

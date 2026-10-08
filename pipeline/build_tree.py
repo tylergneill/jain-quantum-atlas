@@ -26,7 +26,8 @@ One work per item:
     sources           ["api", "quantum"] -- which catalogues know the item
 
 `all_stats` is `shape.summarize` plus `quantum_text_count`, `api_count`,
-`quantum_count` and `last_changed` (the newest web_date).
+`quantum_count`, `last_changed` (the newest web_date) and `sourced` (the
+newest fetch: when our copy was taken, the same date docs/VERSION carries).
 
     make build
 """
@@ -35,10 +36,11 @@ import argparse
 import glob
 import json
 import re
+from datetime import date
 from pathlib import Path
 
-from pipeline.config import (API_CACHE_DIR, CATALOGUE_PATH, DOCS_DIR, SIZES_PATH,
-                             TEXT_EXTRACT_DIR, TEXT_LOG_PATH, TREE_PATH)
+from pipeline.config import (API_CACHE_DIR, CATALOG_LOG_PATH, CATALOGUE_PATH, DOCS_DIR,
+                             SIZES_PATH, TEXT_EXTRACT_DIR, TEXT_LOG_PATH, TREE_PATH)
 from pipeline.shape import build_axes, report, write
 
 # The library's "manuscripts" folder holds block prints and horizontal-format
@@ -272,20 +274,56 @@ def make_work(srno: str, api: dict | None, q: dict | None, sizes: dict | None,
     return work
 
 
-def stamp_version(works: list[dict]) -> str | None:
-    """docs/VERSION: __content_version__ is the newest accession the data saw."""
-    newest = max((w.get("added") or "" for w in works), default="")
+def newest_fetch(*journals: Path) -> str:
+    """The newest `fetched_at` across the fetch journals, "" if none is on disk.
+
+    Error rows count too: a failed request still says the fetcher ran that day.
+    """
+    newest = ""
+    for path in journals:
+        if not path.exists():
+            continue
+        for line in path.open(encoding="utf-8"):
+            if line.strip():
+                fetched = json.loads(line).get("fetched_at") or ""
+                if fetched > newest:
+                    newest = fetched
+    return newest
+
+
+def stamp_version(stats: dict) -> str | None:
+    """docs/VERSION and `all_stats.sourced`: when our copy was taken.
+
+    `__content_version__` is the newest `fetched_at` across the two fetch
+    journals, the Quantum catalog's and the booktexts' -- counts come from the
+    catalogues and sizes from the texts, so either being re-fetched makes the
+    published figures newer. (The jainelibrary.org API pull keeps no journal.)
+    That is what the field means in every Atlas, "data last sourced"; the
+    collection's own newest accession is `all_stats.last_changed`, and until
+    2026-10-08 this carried that instead.
+
+    The same date goes into `stats["sourced"]` (the `all_stats` block), beside
+    the figures it dates, which is where Sāgarasaṅgama reads it (its
+    CONTRACT.md). One value, one function, so the two cannot disagree. Call
+    it before the tree is written. Without a journal on this machine the date
+    already in docs/VERSION is reused and the file is left alone.
+    """
     path = DOCS_DIR / "VERSION"
     lines = path.read_text(encoding="utf-8").splitlines() if path.exists() else []
     kv = {l.split("=")[0].strip(): l for l in lines if "=" in l}
-    from datetime import date
+    newest = newest_fetch(TEXT_LOG_PATH, CATALOG_LOG_PATH)[:10]
+    content = newest or kv.get("__content_version__", "").partition("=")[2].strip().strip("\"'")
+    if not content:
+        return None
+    stats["sourced"] = content
+    if not newest:
+        return content
     kv.setdefault("__code_version__", '__code_version__ = "0.1.0"')
     kv["__data_version__"] = f'__data_version__ = "{date.today().isoformat()}"'
-    if newest:
-        kv["__content_version__"] = f'__content_version__ = "{newest}"'
-    path.write_text("\n".join(kv[k] for k in ("__code_version__", "__data_version__", "__content_version__") if k in kv) + "\n",
+    kv["__content_version__"] = f'__content_version__ = "{content}"'
+    path.write_text("\n".join(kv[k] for k in ("__code_version__", "__data_version__", "__content_version__")) + "\n",
                     encoding="utf-8")
-    return newest or None
+    return content
 
 
 def main() -> None:
@@ -337,10 +375,12 @@ def main() -> None:
         return (canon_order.index((d, s)) if (d, s) in canon_order else 999, s)
 
     tree = build_axes(works, "api+quantum", extra, domain_order, sub_order)
+    # Before `write`: the date lands in the tree as well as in docs/VERSION.
+    stamped = stamp_version(tree["all_stats"])
     write(tree, args.out)
     report(tree, args.out)
-    if stamped := stamp_version(works):
-        print(f"  content version: {stamped} (newest accession)")
+    if stamped:
+        print(f"  content version: {stamped} (newest fetch; also all_stats.sourced)")
 
 
 if __name__ == "__main__":

@@ -392,10 +392,8 @@
             const el = document.getElementById("pipelineRun");
             if (el) el.textContent = `data pipeline last run: ${value}`;
           } else if (key === "__content_version__") {
-            /* Not "last sourced" as in the siblings: this Atlas's content
-               version is the newest accession the data saw, not a fetch date. */
             const el = document.getElementById("contentDate");
-            if (el) el.textContent = `newest Sanskrit book online: ${monthYear(value)}`;
+            if (el) el.textContent = `data last sourced: ${monthYear(value)}`;
           }
         }
       } catch (e) {
