@@ -90,8 +90,9 @@ Two consequences worth knowing: the Sanskrit tier with text is exactly the
 slice that has been fetched and measured, so `sized == text_count` and the
 byte figures are complete rather than a floor; and the post-2022 convention
 shift (`Sanskrit, Hindi`) means recent accessions mostly fall outside the
-tier -- which coincides with Quantum's text stopping in 2022, so little that
-had text is lost.
+tier -- and Quantum's text for the tier had already stopped by then (the
+newest item with one went online in mid-2020; its catalog runs to 2022), so
+little that had text is lost.
 
 ## Two sources, one catalogue
 

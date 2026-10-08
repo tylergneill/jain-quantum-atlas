@@ -12,97 +12,407 @@
       document.documentElement.setAttribute("data-theme", theme);
     })();
   </script>
-  <style>
-    .about { max-width: 46rem; margin: 0 auto; padding: 1.5rem 1rem 4rem; line-height: 1.55; }
-    .about h2 { margin-top: 2rem; }
-    .about table { border-collapse: collapse; margin: 1rem 0; }
-    .about td, .about th { padding: 0.25rem 0.8rem 0.25rem 0; text-align: left; vertical-align: top; }
-    .about td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
-    .about .muted { color: var(--muted); }
-  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@indic-transliteration/sanscript@1.3.3/sanscript.min.js"></script>
 </head>
 <body>
-  <header class="topbar">
+  <header class="topbar about-topbar">
     <div class="brand">
-      <a href="./index.html" class="brand-title brand-title-link" style="text-decoration:none">Jain Quantum Atlas</a>
-      <span class="topbar-link" style="color: var(--muted)">About</span>
+      <a href="./index.html" class="brand-title brand-title-link" title="Back to All">Jain Quantum Atlas</a>
     </div>
+
     <nav class="topnav">
+      <label class="navlabel" for="schemeSelect">अ→a</label>
+      <select id="schemeSelect">
+        <option value="devanagari">देवनागरी</option>
+        <option value="iast" selected>IAST</option>
+        <option value="itrans">ITRANS</option>
+        <option value="hk">HK</option>
+        <option value="iso">ISO 15919</option>
+        <option value="slp1">SLP1</option>
+      </select>
       <button id="themeToggle" class="theme-toggle" type="button" title="Toggle light/dark theme"></button>
     </nav>
+
+    <a href="./index.html" class="topbar-link about-back-link">← Back to tree</a>
   </header>
 
-  <main class="about">
-    <h1>About this Atlas</h1>
-    <p>A browsable index of the <strong>Jain eLibrary</strong>, an online library of Jain literature
-      run by JAINA's education arm, as served by its two public faces:
-      <a href="https://jainqq.org" target="_blank" rel="noopener">jainqq.org</a> ("Jain Quantum"), a full-text
-      search engine that publishes each item's OCR text, and
-      <a href="https://jainelibrary.org" target="_blank" rel="noopener">jainelibrary.org</a>, whose open API
-      carries the richer metadata. This Atlas hosts no text; every item links back to Quantum's viewer.</p>
+  <main class="mainpane" style="height: calc(100% - 48px); display:flex; justify-content:center;">
+    <section class="content" style="width:100%; max-width:900px;">
+      <div class="block">
+        <h2 id="about" style="margin-top:0;">About</h2>
+        <p>
+          The <a href="https://jainelibrary.org" target="_blank" rel="noopener">Jain eLibrary</a>
+          is an online library of Jain literature run by JAINA's education arm.
+          <a href="https://jainqq.org" target="_blank" rel="noopener">jainqq.org</a> ("Jain Quantum")
+          is its full-text search engine, which also publishes the OCR text of each item it indexes.
+        </p>
+        <p>
+          This unofficial “atlas” interface — not affiliated in any way —
+          offers a better way to explore the Sanskrit books in this large and mostly vernacular library.
+          It is an "atlas" in the sense that it not only charts the navigable waters —
+          with more transparent browsing by author and by canonical text —
+          but also plumbs their depths —
+          with visibility into sizes, counts, and changes over time
+          that the source collection doesn't surface on its own.
+          It is not a mirror, as it hosts no text of its own;
+          instead, every entry links back to jainqq.org for the actual content.
+        </p>
+        <p>
+          For more perspective on this and sibling Atlas projects, see <a href="https://sagarasangama.info/" id="parentLink">Sāgarasaṅgama</a>.
+        </p>
+        <p>
+          code: <span id="appVersion"></span>, <a href="https://github.com/tylergneill/jain-quantum-atlas" target="_blank" rel="noopener">on GitHub</a>
+        </p>
+        <p>
+          <span id="contentDate"></span>
+        </p>
+        <p>
+          <span id="pipelineRun"></span>
+        </p>
+      </div>
 
-    <h2>At a glance</h2>
-    <table>
-      <tr><td><strong>Sanskrit books</strong> (incl. Quantum's Āgama folder and the "manuscripts" folder)</td><td><span data-stat="count"></span></td></tr>
-      <tr><td>…with a public OCR text on Quantum</td><td><span data-stat="text_count"></span></td></tr>
-      <tr><td>…whose text has been fetched and measured</td><td><span data-stat="sized"></span></td></tr>
-      <tr><td>IAST bytes over the measured items</td><td><span data-stat="transliterated_bytes" data-unit="mb"></span> MB</td></tr>
-      <tr><td>…with a scanned PDF (login-gated)</td><td><span data-stat="pdf_count"></span></td></tr>
-      <tr><td>Newest Sanskrit accession</td><td><span data-stat="last_changed"></span></td></tr>
-      <tr><td class="muted">Sanskrit and Prakrit items, same types</td><td class="muted"><span data-stat="sanskrit_prakrit_count"></span></td></tr>
-      <tr><td class="muted">Items mentioning Sanskrit alongside another language</td><td class="muted"><span data-stat="any_sanskrit_count"></span></td></tr>
-      <tr><td class="muted">The whole library, both catalogues</td><td class="muted"><span data-stat="library_count"></span></td></tr>
-      <tr><td class="muted">…of which with a public text</td><td class="muted"><span data-stat="library_text_count"></span></td></tr>
-    </table>
+      <details class="block collapsible">
+        <summary><h2 id="practical-intro">Practical Intro to Jain eLibrary Structure</h2></summary>
 
-    <h2>What is and is not counted</h2>
-    <p>This Atlas publishes the <strong>Sanskrit tier</strong> of the library and nothing else: items whose
-      catalogued language is exactly Sanskrit and that are books. "Books" here includes two of the
-      library's storage folders: "manuscripts", which holds block prints and horizontal-format printed books
-      (marked <em>horizontal</em>), and Quantum's Āgama folder of sutra-level editions. That is
-      what Sāgarasaṅgama reads from it. The rest of the library (Gujarati and Hindi books, articles,
-      magazines, audio, and editions that pair Sanskrit with a translation) is counted in the muted rows
-      above and otherwise left out. The two catalogues are joined on their shared six-digit serial. An item
-      <em>has text</em> when Quantum serves a booktext for it; every such item has been fetched and measured,
-      so the byte figures are complete.</p>
+        <h3 id="two-sites">One Library, Two Overlapping Sites</h3>
+        <p>
+          The library has two public faces over one catalogue,
+          in which every item has the same six-digit serial number on both.
+        </p>
+        <p>
+          <strong>jainelibrary.org</strong> is the library proper:
+          the fuller catalogue record for each item, and its scanned files,
+          which can be downloaded only with an account.
+          <strong>jainqq.org</strong> is the search engine:
+          a thinner record, a page-by-page viewer,
+          and the whole OCR text of the item on a single page, with no account needed.
+        </p>
+        <p>
+          Neither site lists everything the other does.
+          Of the <strong><span data-stat="count"></span> Sanskrit books</strong> this Atlas covers:
+        </p>
 
-    <h2>Browsing</h2>
-    <p>The default axis is the <strong>author</strong>: the classical author where the catalogue names one
-      (<code>sutra_author</code>), otherwise the author or editor the catalogue gives, marked <em>ed.</em> on
-      the row; 96% of the Sanskrit items have one. The second axis is the <strong>Āgama canon</strong>: class
-      (Aṅga, Upāṅga, Chedasūtra, Mūlasūtra, Cūlikāsūtra, Prakīrṇaka) and canonical text, assigned from the
-      library's own <code>agam_…</code> tags and nothing else, with the classes in their traditional order.
-      <span data-stat="canon_count"></span> of the Sanskrit items carry such a tag; the rest sit under
-      <em>Other works</em>. Horizontal-format prints and script are facts on the row, not shelves.</p>
+        <figure class="venn-figure">
+          <!-- Every number below carries a data-stat tag and is filled by about.js
+               from tree.json; edit the tag, not the digits. -->
+          <svg viewBox="0 -16 620 216" role="img" aria-label="Sanskrit books by site: jainelibrary.org only, both sites, jainqq.org only">
 
-    <h2>Where Quantum stops</h2>
-    <p>Quantum's catalog and text index end in 2022, and the library's OCR pipeline appears to have stopped
-      with it. Sanskrit items accessioned since are listed here from the API alone, flagged <em>API
-      only</em>, with no public text and no size. Because the cataloguing convention changed at the same
-      time (recent Sanskrit editions are tagged "Sanskrit, Hindi"), few of them fall in the Sanskrit tier at all.</p>
+            <text x="60" y="6" class="venn-label">jainelibrary.org</text>
+            <text x="560" y="6" class="venn-label">jainqq.org</text>
 
-    <h2>Growth</h2>
-    <p>Every API record carries the day it went online, so the growth series is measured from the
-      library's own stamps: <span data-stat="changelog_months"></span> months,
-      <span data-stat="changelog_first"></span> to <span data-stat="changelog_last"></span>;
-      <span data-stat="undated_works"></span> items known only to Quantum carry no date.
-      The text series flattens after 2022 for the reason above.</p>
+            <circle cx="268" cy="100" r="86" class="venn-circle venn-pdf" />
+            <circle cx="352" cy="100" r="86" class="venn-circle venn-uni" />
 
-    <h2>Caveats</h2>
-    <ul>
-      <li>The text is OCR, with its noise still in. The furniture rules remove the digitising libraries'
-        stamps and page numbers and nothing else.</li>
-      <li>"Sanskrit" per the catalogue includes many books with Hindi apparatus in the same script, and
-        the language field's convention changed around 2023, so <em>any Sanskrit</em> is the stable grouping.</li>
-      <li>Classification on the source is mostly by script and format; subject tokens exist on some records
-        but are not surfaced on either site.</li>
-    </ul>
+            <!-- Leaders tying the outboard counts to the region they describe. -->
+            <line x1="96" y1="90" x2="215" y2="90" class="venn-leader" />
+            <line x1="524" y1="90" x2="405" y2="90" class="venn-leader" />
 
-    <p class="muted">Source and pipeline: <a href="https://github.com/tylergneill/jain-quantum-atlas" target="_blank" rel="noopener">github.com/tylergneill/jain-quantum-atlas</a>.
-      Part of <a href="https://sagarasangama.info" target="_blank" rel="noopener">Sāgarasaṅgama</a>.
-      Metadata CC BY-NC-SA 4.0; the texts belong to the Jain eLibrary and its contributors.</p>
+            <text x="60" y="95" class="venn-count" data-stat="api_only"></text>
+            <text x="60" y="112" class="venn-cap">library only</text>
+            <text x="310" y="95" class="venn-count venn-both" data-stat="both_sources"></text>
+            <text x="310" y="112" class="venn-cap venn-both">both</text>
+            <text x="560" y="95" class="venn-count" data-stat="quantum_only"></text>
+            <text x="560" y="112" class="venn-cap">Quantum only</text>
+          </svg>
+        </figure>
+
+        <h3 id="scans-and-texts">Scans and Texts</h3>
+        <p>
+          Every item is a scanned book, and the scan is the primary object.
+          Text exists only as OCR of that scan, in two places:
+          as a Word document in the library, behind its login
+          (<span data-stat="docx_count"></span> of the <span data-stat="count"></span> Sanskrit books have one),
+          and as the public text on Jain Quantum
+          (<strong><span data-stat="text_count"></span></strong> do).
+          The remaining <span data-stat="no_text"></span> can be seen in the library but not read as text anywhere public.
+        </p>
+        <p>
+          For example,
+          <a href="https://jainqq.org/explore/001014/1" target="_blank" rel="noopener"><span class="sa-cap">पञ्चसंग्रह</span></a>
+          (serial 001014) is a 250-page book printed in 1927:
+          its scan is in the library, and
+          <a href="https://jainqq.org/booktext/Panchsangrah/001014" target="_blank" rel="noopener">its text</a>
+          is on Quantum.
+        </p>
+
+        <h3 id="metadata">Metadata</h3>
+        <p>
+          The catalogue is built around how a book is stored, not what it is about.
+          <code>classification</code> is mostly script and format
+          (<code>Book_Devnagari</code>, <code>Manuscript</code>, <code>Dictionary</code>),
+          written as a comma-separated list;
+          the Sanskrit books alone carry <span data-stat="classification_distinct"></span> distinct strings.
+          Subject terms exist on some records but neither site offers them for browsing.
+        </p>
+        <p>
+          <code>script</code> names a language rather than a script:
+          <span data-stat="script_devanagari"></span> of the Sanskrit books say <code>Hindi</code>,
+          meaning Devanāgarī.
+          <code>language</code> is a comma-separated string as catalogued
+          (<code>Sanskrit</code>, or <code>Sanskrit, Hindi</code>, typically for a text with a Hindi translation or commentary).
+        </p>
+
+        <h3 id="manuscripts">A "Manuscripts" Folder of Printed Books</h3>
+        <p>
+          The library files <span data-stat="horizontal"></span> of the Sanskrit books under "manuscripts."
+          These are not handwritten: they are block prints and printed books in horizontal format.
+          <span data-stat="horizontal_text"></span> of them have a public text.
+        </p>
+
+        <h3 id="authors">Authors and Editors</h3>
+        <p>
+          The catalogue's <code>author</code> is whoever the record was filed under,
+          which is often a modern editor or publisher rather than the author of the work.
+          A separate field for the classical author exists
+          but is filled on only <span data-stat="classical_author_count"></span> of the Sanskrit books
+          (<span data-stat="classical_author_pct"></span>%).
+          Names are romanised without diacritics and not standardised,
+          and a single field often holds several people.
+        </p>
+
+        <h3 id="canon">Canonical Texts</h3>
+        <p>
+          The one subject-like structure the catalogue does carry is the Śvetāmbara
+          <span class="sa-cap">आगम</span> canon:
+          a tag of the form <code>agam_…</code> names the canonical text an item belongs to.
+          <span data-stat="canon_count"></span> of the Sanskrit books
+          (<span data-stat="canon_pct"></span>%) carry one.
+        </p>
+
+        <h3 id="language">Sanskrit vs. Other Languages</h3>
+        <p>
+          The library is mostly Gujarati and Hindi.
+          Its two catalogues together list <span data-stat="library_count"></span> items —
+          books, articles, magazines and audio —
+          of which <span data-stat="library_text_count"></span> have a public text.
+          Among the books, <span data-stat="any_sanskrit_count"></span> mention Sanskrit among their languages,
+          <span data-stat="sanskrit_prakrit_count"></span> are in Sanskrit, Prakrit or both and nothing else,
+          and <strong><span data-stat="count"></span></strong> are catalogued as Sanskrit alone.
+        </p>
+      </details>
+
+      <details class="block collapsible">
+        <summary><h2 id="obtaining-and-representing">Obtaining and Representing Jain eLibrary Data</h2></summary>
+
+        <h3 id="scraping">Scraping</h3>
+        <p>
+          Metadata comes from both sites.
+          Jain Quantum's catalog is 34 pages of a thousand rows each,
+          behind a Cloudflare challenge which an ordinary browser session passes.
+          The library's own records come from its public catalogue interface.
+        </p>
+        <p>
+          Text comes from Jain Quantum alone: one request for each Sanskrit book that has a text.
+          With polite scraping (2 seconds per request), this takes a little over an hour.
+          Texts are fetched for the purpose of calculating size and none is shared publicly.
+          Nothing is fetched from behind the library's login, and no scans were fetched at all.
+        </p>
+
+        <h3 id="sanskrit-tier">Sanskrit Books Only</h3>
+        <p>
+          The Atlas covers the items catalogued as <strong>Sanskrit and nothing else</strong>
+          which are books — including the "manuscripts" folder described above
+          and Jain Quantum's separate shelf of <span class="sa-cap">आगम</span> editions.
+          Editions that pair a Sanskrit text with a translation are left out:
+          Sanskrit and Hindi share a script here,
+          so a size figure for such a book would not be a Sanskrit figure.
+        </p>
+        <p>
+          Even so, many books catalogued as Sanskrit alone carry a Hindi preface or apparatus,
+          so the figures here are somewhat high for that reason too.
+          The cataloguing convention has also shifted:
+          recent Sanskrit editions are mostly entered as "Sanskrit, Hindi"
+          and so fall outside this selection.
+        </p>
+
+        <h3 id="calculating-size">Calculating Size Information</h3>
+        <p>
+          Size calculation involves two steps:
+        </p>
+        <ol>
+          <li>stripping page markers, bare page numbers, and the stamps of the digitising libraries
+            which the OCR read off each scanned page, and</li>
+          <li>transliterating from Devanāgarī to IAST.</li>
+        </ol>
+        <p>
+          IAST text takes up less space
+          (here <span data-stat="iast_pct"></span>% of the cleaned text's byte count)
+          and is more common for cross-collection size comparisons.
+        </p>
+        <p>
+          Every one of the <span data-stat="sized"></span> public texts has been measured:
+          <span data-stat="text_pages"></span> pages,
+          <strong><span data-stat="transliterated_bytes" data-unit="mb"></span>&nbsp;MB</strong> as IAST,
+          with a median book of about <span data-stat="median_bytes" data-unit="kb"></span>&nbsp;KB.
+          This is OCR output with its noise still in;
+          only whole lines that are plainly not content are removed.
+        </p>
+
+        <h3 id="calculating-dates">Calculating Date Information</h3>
+        <p>
+          Every record on jainelibrary.org carries the day the item went online,
+          so dates here are <strong>measured rather than inferred</strong>.
+          The <span data-stat="undated_works"></span> books known only to Jain Quantum
+          have no such record and carry no date.
+        </p>
+        <p>
+          This is the date an item joined the library, not the date of the book:
+          the publication year, where the catalogue gives one, is shown separately.
+        </p>
+
+        <h3 id="browsing-authors-and-canon">Browsing by Author and Canon</h3>
+        <p>
+          The default view is by author.
+          Where the catalogue names a classical author, the book is listed under that name,
+          and the editor it was filed under is kept on an "ed." tag;
+          otherwise it is listed under whatever name the catalogue gives.
+          <span data-stat="author_pct"></span>% of the books have a name of one kind or the other.
+          No normalization is performed, so the catalogue's variant spellings of one person
+          remain separate here.
+        </p>
+        <p>
+          Alternatively, the books can be browsed by canon:
+          the six classes of the <span class="sa-cap">आगम</span> in their traditional order
+          (Aṅga, Upāṅga, Chedasūtra, Mūlasūtra, Cūlikāsūtra, Prakīrṇaka),
+          then the canonical text.
+          Placement follows the library's own <code>agam_…</code> tags and nothing else;
+          books without one sit under "Other works."
+          The two views can be combined.
+        </p>
+        <p>
+          Each title links to Jain Quantum's page viewer.
+          A "text" tag links to the full OCR text where there is one;
+          "PDF" and "docx" tags are inert, marking files that exist behind the library's login.
+          "horizontal" marks a book from the "manuscripts" folder,
+          and "API only" one that Jain Quantum does not list.
+          A "TXT only" toggle hides everything without a public text.
+        </p>
+      </details>
+
+      <details class="block collapsible">
+        <summary><h2 id="data-quality">Data Quality: Structural Errors</h2></summary>
+
+        <h3 id="opportunities-for-correction">Opportunities for Correction</h3>
+        <p>
+          Problems in the catalogue that could be fixed at the source.
+          The lists are computed in this page from the Atlas's published data,
+          and cover the Sanskrit books only.
+        </p>
+        <!-- Filled by renderAudit() in about.js from data/tree.json. -->
+        <ul id="auditList" style="list-style: none; padding-left: 0;">
+          <li>Loading…</li>
+        </ul>
+      </details>
+
+      <details class="block collapsible">
+        <summary><h2 id="data-quantity">Data Quantity: Historical Trends</h2></summary>
+
+        <div id="growthControls" class="gb-controls">
+        <span class="gb-group"><span class="gb-ctl-label">measure</span>
+          <span class="gb-seg"><button type="button" data-axis="metric" data-value="count">item count</button><button
+                type="button" data-axis="metric" data-value="size">text size</button></span></span>
+        <span class="gb-group"><span class="gb-ctl-label">period</span>
+          <span class="gb-seg"><button type="button" data-axis="granularity" data-value="1">month</button><button
+                type="button" data-axis="granularity" data-value="3">quarter</button><button
+                type="button" data-axis="granularity" data-value="12">year</button></span></span>
+        <span class="gb-group"><span class="gb-ctl-label">totals</span>
+          <span class="gb-seg"><button type="button" data-axis="mode" data-value="cumulative">cumulative</button><button
+                type="button" data-axis="mode" data-value="added">period</button></span></span>
+        </div>
+
+        <div class="gb-legend">
+        <span class="gb-key"><span class="gb-swatch gb-text"></span>public text</span>
+        <span class="gb-key"><span class="gb-swatch gb-pdf"></span>scan only</span>
+        </div>
+
+        <div id="growthChart">Loading…</div>
+
+        <p>
+          See <a href="#calculating-dates">Calculating Date Information</a> above for the method.
+          The chart runs from <span data-stat="changelog_first"></span> to <span data-stat="changelog_last"></span>
+          and leaves out the <span data-stat="undated_works"></span> undated books,
+          <span data-stat="undated_text"></span> of which have a text.
+        </p>
+
+        <h3 id="where-the-text-stops">Where the Text Stops</h3>
+        <p>
+          The newest Sanskrit book with a public text went online in
+          <strong><span data-stat="last_text_added"></span></strong>.
+          The <span data-stat="since_last_text"></span> added to the library since have none:
+          <span data-stat="since_quantum"></span> of them, online by the end of
+          <span data-stat="last_quantum_year"></span>, are listed in Jain Quantum's catalog without a text;
+          the <span data-stat="since_api_only"></span> online from
+          <span data-stat="first_api_only_year"></span> are not in it at all.
+        </p>
+        <p>
+          So the text series flattens while the library keeps growing,
+          and the count of public texts describes the library as it stood some years ago.
+          The slow growth of the item series in recent years is partly an artefact of the
+          <a href="#sanskrit-tier">cataloguing shift</a> described above,
+          which moves new Sanskrit editions out of this selection.
+        </p>
+        <p style="margin-top:12px;">
+          Further caveat: the bands describe each item as it stands today, not as it arrived.
+          A book counted as having a text in the year it went online
+          may have been OCR'd some time afterwards.
+        </p>
+      </details>
+    </section>
   </main>
 
+  <script type="module">
+    const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    /* "2026-06-09" -> "Jun 2026", matching how Sāgarasaṅgama rounds the same
+       figure. Read off the string rather than parsed with `new Date()`: an ISO
+       date parses as UTC midnight, which is the previous day locally and can
+       print the wrong month. */
+    function monthYear(iso) {
+      const m = /^(\d{4})-(\d{2})/.exec(iso || "");
+      if (!m) return "";
+      const month = MONTHS[Number(m[2]) - 1];
+      return month ? `${month} ${m[1]}` : "";
+    }
+
+    async function loadVersion() {
+      try {
+        const r = await fetch("./VERSION");
+        if (!r.ok) return;
+        const text = await r.text();
+        for (const line of text.split("\n")) {
+          if (!line.includes("=")) continue;
+          const eqIdx = line.indexOf("=");
+          const key = line.slice(0, eqIdx).trim();
+          const value = line.slice(eqIdx + 1).trim().replace(/^['"]|['"]$/g, "");
+          if (key === "__code_version__") {
+            const el = document.getElementById("appVersion");
+            if (el) el.textContent = `v${value}`;
+          } else if (key === "__data_version__") {
+            const el = document.getElementById("pipelineRun");
+            if (el) el.textContent = `data pipeline last run: ${value}`;
+          } else if (key === "__content_version__") {
+            /* Not "last sourced" as in the siblings: this Atlas's content
+               version is the newest accession the data saw, not a fetch date. */
+            const el = document.getElementById("contentDate");
+            if (el) el.textContent = `newest Sanskrit book online: ${monthYear(value)}`;
+          }
+        }
+      } catch (e) {
+        console.log("Could not load version:", e);
+      }
+    }
+
+    loadVersion();
+  </script>
+  <script type="module">
+    import { initStaticTranslit } from "./translit-static.js";
+    import { initAnchorDetails } from "./anchor-details.js";
+    import { initTopbarHeight } from "./topbar-height.js";
+    initTopbarHeight();
+    initStaticTranslit("iast");
+    initAnchorDetails();
+  </script>
   <script type="module" src="./about.js"></script>
 </body>
 </html>

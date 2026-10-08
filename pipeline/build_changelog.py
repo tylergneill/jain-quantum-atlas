@@ -13,8 +13,9 @@ in E-bhāratīsampat's dict shape, which the aggregator already reads:
          "cumulative_iast_bytes_total": ...} IAST bytes over the sized items -- a FLOOR
      ], "undated_works": N}
 
-**`cumulative_text_count` flattens after 2022** because Quantum did; that is
-the finding, not an artefact, and the About page should say so. The byte
+**`cumulative_text_count` flattens after mid-2020**, when Quantum's text for
+the tier stops (its catalog runs on to 2022); that is the finding, not an
+artefact, and the About page says so. The byte
 series covers only what has been fetched (the Sanskrit-only slice on the
 seeding day) and is published as the floor it is.
 
@@ -72,7 +73,7 @@ def main() -> None:
         "periods": periods,
         "undated_works": undated,
         "note": ("cumulative_text_count counts items with a Jain Quantum booktext and "
-                 "flattens after 2022, when Quantum's index stopped; "
+                 "flattens after mid-2020, when Quantum's text stops (its catalog runs to 2022); "
                  "cumulative_iast_bytes_total covers only the items fetched and measured "
                  "so far and is a floor."),
     }

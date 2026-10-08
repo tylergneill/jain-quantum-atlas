@@ -1364,5 +1364,5 @@
   }
  ],
  "undated_works": 119,
- "note": "cumulative_text_count counts items with a Jain Quantum booktext and flattens after 2022, when Quantum's index stopped; cumulative_iast_bytes_total covers only the items fetched and measured so far and is a floor."
+ "note": "cumulative_text_count counts items with a Jain Quantum booktext and flattens after mid-2020, when Quantum's text stops (its catalog runs to 2022); cumulative_iast_bytes_total covers only the items fetched and measured so far and is a floor."
 }
